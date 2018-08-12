@@ -34,13 +34,7 @@ class AdminController extends Controller
     
     public function admin()
     {
-        // create a volunteers object with the fields we need
-	    $volunteers = DB::table('volunteers')
-         ->join('statuses', 'volunteers.status_id', '=', 'statuses.id')
-         ->join('users', 'volunteers.user_id', '=', 'users.id')
-         ->join('demographics','demographics.user_id','=','users.id')
-         ->select('volunteers.*', 'statuses.status','users.email', 'demographics.home_phone', 
-         'demographics.work_phone', 'demographics.cell_phone')->get();
-         return view('admin.admin', compact('volunteers'));
+         $message = "Hello Admin!";
+         return view('admin.admin', compact('message'));
     }
 }
