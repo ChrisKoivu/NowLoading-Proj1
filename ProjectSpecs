@@ -1,0 +1,27 @@
+Project Title: Autism Helpdesk
+Currently, there is no real data, in particular, needs assessment data to support our efforts stating the needs of 
+individuals with autism spectrum disorders and their families residing in Northeast Florida. We provide various 
+resource materials needed to help those serve individuals with autism. MS4A need a system that will collect this data 
+for a needs assessment survey and provide the one-stop online access to help individuals with autism, their families, 
+and professionals navigate the resources available in our community. 
+At registration on website, short surveys will be required to each participant for collecting demographics and autism 
+evaluation data. Resource section of site will store PDFs, videos, and links to various community resources that can 
+be accessed by searching categories, topics, or age of child. The system should track and report on resources accessed 
+by and data provided by users.
+Anticipated Features:
+• User account management - Ability for users to log in, create, and manage their profile.
+• Users of the application are parents, individuals with autism, professionals, social worker, and administrator.
+• Ability to track the pages or types of information accessed by users.
+• Notifications sent via email to individuals with autism, parents, professionals, and managers once site 
+registration has been completed
+• Automated username and password retrieval or reset if account holder has forgot either item.
+• A survey system that requires specific questions to be answered to create a user account.
+• W3C WAI - The website needs to be disability ready
+• Reports generation on demographics and evaluations of users
+• Ability to create autism resource pages
+• Ability for storing such as PDFs, video, and website link backs to resources
+• Ability for searching resources based on topics and categories 
+Potential Utility or Impact of the Software:
+MS4A staff will use the reports generated from the users experience to improve the organizations activities and prove 
+needs of users for grant funding. We also hope the data collected can be used assist with research studies for the 
+Northeast Florida autism community
