@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    //
+
+    /**
+     * this model is for an individual post or content
+     * on a page
+     */
+    
 
      /**
      * Get the page that this post is associated with.
