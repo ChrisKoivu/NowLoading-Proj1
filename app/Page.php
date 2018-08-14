@@ -20,14 +20,7 @@ class Page extends Model
         return $this->hasMany('App\Post');
     }
 
-    /**
-     * Get the files associated with this Page 
-     */
-    public function files()
-    {
-        return $this->hasMany('App\File');
-    }
-
+  
 
 
 }
