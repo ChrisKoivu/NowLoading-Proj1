@@ -40,4 +40,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the activity associated with this User 
+     */
+    public function track()
+    {
+        return $this->hasMany('App\Track');
+    }
+
 }

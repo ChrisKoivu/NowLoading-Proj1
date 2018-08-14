@@ -17,9 +17,10 @@ class CreateFilesTable extends Migration
             $table->increments('id');
             $table->timestamps();
 
-            // FK to pages table. 
-            $table->integer('page_id')->unsigned();
-            $table->foreign('page_id')->references('id')->on('pages');
+            
+            // FK to posts table. 
+            $table->integer('post_id')->unsigned();
+            $table->foreign('post_id')->references('id')->on('posts');
 
         });
     }
