@@ -14,7 +14,7 @@ class File extends Model
      */
 
     /**
-     * Get the page that this file is associated with.
+     * Get the post that this file is associated with.
      */
     public function post()
     {
