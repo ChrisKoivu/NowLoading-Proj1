@@ -14,11 +14,11 @@ class File extends Model
      */
 
     /**
-     * Get the page that this file is associated with.
+     * Get the post that this file is associated with.
      */
-    public function page()
+    public function post()
     {
-        return $this->belongsTo('App\Page');
+        return $this->belongsTo('App\Post');
     }
 
 }
