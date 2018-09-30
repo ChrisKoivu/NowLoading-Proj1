@@ -8,7 +8,7 @@ class Post extends Model
 {
 
     /**
-     * this model is for an individual post or content
+     * this model is for an individual post / content
      * on a page
      */
     
@@ -20,21 +20,4 @@ class Post extends Model
     {
         return $this->belongsTo('App\Page');
     }
-    /**
-
-* Get the files associated with this post.
-
-*/
-
-public function files()
-
-{
-
-return $this->hasMany('App\File');
-
-}
-
-
-    
-
 }
