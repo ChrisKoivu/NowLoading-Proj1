@@ -15,6 +15,10 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
+
+            // FK to surveys table. 
+            $table->integer('survey_id')->unsigned();
+            
             $table->timestamps();
         });
     }
@@ -26,6 +30,7 @@ class CreateQuestionsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('questions');
     }
 }

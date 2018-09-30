@@ -15,7 +15,16 @@ class CreateSurveysTable extends Migration
     {
         Schema::create('surveys', function (Blueprint $table) {
             $table->increments('id');
+
+            // FK to users table. 
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+
+            // FK to questions table. 
+            $table->integer('question_id')->unsigned();
+            
             $table->timestamps();
+
         });
     }
 

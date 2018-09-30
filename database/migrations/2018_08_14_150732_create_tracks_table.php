@@ -22,11 +22,11 @@ class CreateTracksTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
             // FK to pages table. 
-           // $table->integer('page_id')->unsigned();
+            $table->integer('page_id')->unsigned();
            // $table->foreign('page_id')->references('id')->on('pages');
 
             // FK to files table. 
-          //  $table->integer('file_id')->unsigned();
+            $table->integer('file_id')->unsigned();
            // $table->foreign('file_id')->references('id')->on('files');
 
         });

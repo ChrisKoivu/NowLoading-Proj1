@@ -15,6 +15,10 @@ class CreateAnswersTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->increments('id');
+
+            // FK to questions table. 
+            $table->integer('question_id')->unsigned();
+            
             $table->timestamps();
         });
     }
@@ -26,6 +30,7 @@ class CreateAnswersTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('answers');
     }
 }
