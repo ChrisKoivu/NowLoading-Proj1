@@ -12,6 +12,7 @@ class Page extends Model
      *  stored files 
      */
 
+
     /**
      * Get the posts associated with this Page 
      */
@@ -20,7 +21,7 @@ class Page extends Model
         return $this->hasMany('App\Post');
     }
 
-        /**
+    /**
      * Get the files associated with this Page 
      */
     public function files()
