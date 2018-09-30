@@ -18,8 +18,8 @@ class CreatePostsTable extends Migration
             $table->timestamps();
 
              // FK to pages table. 
-             $table->integer('page_id')->unsigned();
-             $table->foreign('page_id')->references('id')->on('pages');
+             //$table->integer('page_id')->unsigned();
+            // $table->foreign('page_id')->references('id')->on('pages');
  
         });
     }
