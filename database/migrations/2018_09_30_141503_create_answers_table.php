@@ -18,6 +18,8 @@ class CreateAnswersTable extends Migration
 
             // FK to questions table. 
             $table->integer('question_id')->unsigned();
+            $table->foreign('question_id')->references('id')->on('questions');
+
             
             $table->timestamps();
         });
