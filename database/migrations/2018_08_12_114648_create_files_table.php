@@ -15,8 +15,9 @@ class CreateFilesTable extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('url');
             $table->timestamps();
-
             
             // FK to pages table. 
             $table->integer('page_id')->unsigned();
