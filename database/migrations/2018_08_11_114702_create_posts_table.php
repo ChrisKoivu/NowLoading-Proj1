@@ -17,6 +17,8 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
+            $table->text('thumbnail_url');
+
             $table->timestamps();
 
              // FK to pages table. 

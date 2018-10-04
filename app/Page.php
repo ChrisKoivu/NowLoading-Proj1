@@ -12,6 +12,16 @@ class Page extends Model
      *  stored files 
      */
 
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title','slug',
+    ];
+
+
 
     /**
      * Get the posts associated with this Page 

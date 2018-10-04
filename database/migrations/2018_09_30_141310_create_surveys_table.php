@@ -22,6 +22,12 @@ class CreateSurveysTable extends Migration
 
             // FK to questions table. 
             $table->integer('question_id')->unsigned();
+            $table->foreign('question_id')->references('id')->on('questions');
+
+            // FK to pages table. 
+            $table->integer('page_id')->unsigned();
+            $table->foreign('page_id')->references('id')->on('pages');
+
             
             $table->timestamps();
 

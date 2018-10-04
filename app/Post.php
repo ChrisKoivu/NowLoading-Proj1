@@ -12,6 +12,15 @@ class Post extends Model
      * on a page
      */
     
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title','body','thumbnail_url',
+    ];
+
 
      /**
      * Get the page that this post is associated with.

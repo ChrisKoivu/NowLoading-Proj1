@@ -17,4 +17,20 @@ class Track extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    /**
+     * Get the page that this activity is associated with.
+     */
+    public function page()
+    {
+        return $this->belongsTo('App\Page');
+    }
+
+    /**
+     * Get the file that this activity is associated with.
+     */
+    public function file()
+    {
+        return $this->belongsTo('App\File');
+    }
 }

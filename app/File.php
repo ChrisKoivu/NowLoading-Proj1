@@ -9,6 +9,16 @@ class File extends Model
     //
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'url', 
+    ];
+
+
+    /**
      * this model stores the metadata for the individual
      * files saved in storage
      */

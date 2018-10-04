@@ -23,4 +23,12 @@ class Survey extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    /**
+     * Get the page that this Survey is associated with.
+     */
+    public function page()
+    {
+        return $this->belongsTo('App\Page');
+    }
 }
