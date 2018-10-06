@@ -17,6 +17,7 @@ class User extends Authenticatable
 
     const ADMIN_ROLE = 'admin';
     const DEFAULT_ROLE = 'default';
+    const SURVEY_COMPLETE = false;
 
     /** verify user is admin */
     public function isAdmin()    {        
@@ -29,7 +30,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role',
+        'name', 'email', 'password', 'role','survey_complete',
     ];
 
     /**

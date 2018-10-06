@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTracksTable extends Migration
+class CreateTrackPagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class CreateTracksTable extends Migration
      */
     public function up()
     {
-        Schema::create('track_files', function (Blueprint $table) {
+        Schema::create('track_pages', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
 
-            // FK to users table. 
+           // FK to users table. 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-
-            // FK to files table. 
-            $table->integer('file_id')->unsigned();
-            $table->foreign('file_id')->references('id')->on('files');
-
+            
+           // FK to pages table. 
+             $table->integer('page_id')->unsigned();
+             $table->foreign('page_id')->references('id')->on('pages');
+            
         });
     }
 
@@ -36,6 +36,6 @@ class CreateTracksTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('tracks');
+        Schema::dropIfExists('track_pages');
     }
 }

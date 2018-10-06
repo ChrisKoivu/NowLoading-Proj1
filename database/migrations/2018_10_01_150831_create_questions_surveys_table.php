@@ -8,6 +8,8 @@ class CreateQuestionsSurveysTable extends Migration
 {
     /**
      * Run the migrations.
+     * this table is a bridge entity for the surveys and questions
+     * many to many relationship
      *
      * @return void
      */
@@ -18,11 +20,11 @@ class CreateQuestionsSurveysTable extends Migration
             
             // FK to questions table. 
             $table->integer('question_id')->unsigned();
-            //$table->foreign('question_id')->references('id')->on('questions');
+            $table->foreign('question_id')->references('id')->on('questions');
 
             // FK to surveys table. 
             $table->integer('survey_id')->unsigned();
-            //$table->foreign('survey_id')->references('id')->on('surveys');
+            $table->foreign('survey_id')->references('id')->on('surveys');
 
             
             $table->timestamps();
