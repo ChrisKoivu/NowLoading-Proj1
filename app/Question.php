@@ -7,6 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
 
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'question',
+    ];
+
+
     /**
      * Get the Answers associated with this Question
      */
@@ -20,6 +31,6 @@ class Question extends Model
      */
     public function survey()
     {
-        return $this->belongsTo('App\Survey');
+        return $this->belongsToMany('App\Survey');
     }
 }

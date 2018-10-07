@@ -15,16 +15,21 @@ class CreateQuestionsSurveysTable extends Migration
      */
     public function up()
     {
-        Schema::create('questions_surveys', function (Blueprint $table) {
+        Schema::create('question_survey', function (Blueprint $table) {
             $table->increments('id');
             
             // FK to questions table. 
-            $table->integer('question_id')->unsigned();
-            $table->foreign('question_id')->references('id')->on('questions');
+            $table->integer('question_id')->unsigned()->nullable();
+            $table->foreign('question_id')->references('id')->on('questions')
+            ->onDelete('cascade');
+
+            ;
 
             // FK to surveys table. 
-            $table->integer('survey_id')->unsigned();
-            $table->foreign('survey_id')->references('id')->on('surveys');
+            $table->integer('survey_id')->unsigned()->nullable();
+            $table->foreign('survey_id')->references('id')->on('surveys')
+            ->onDelete('cascade');
+;
 
             
             $table->timestamps();

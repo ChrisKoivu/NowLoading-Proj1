@@ -50,4 +50,13 @@ class User extends Authenticatable
         return $this->hasMany('App\Track');
     }
 
+    /**
+     * Get the activity associated with this User 
+     */
+    public function survey(){
+    
+        return $this->hasOne('App\Survey');
+    }
+
+
 }
