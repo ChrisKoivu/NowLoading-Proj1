@@ -21,9 +21,9 @@ class Question extends Model
     /**
      * Get the Answers associated with this Question
      */
-    public function answers()
+    public function responses()
     {
-        return $this->hasMany('App\Answer');
+        return $this->hasMany('App\Response');
     }
 
     /**
