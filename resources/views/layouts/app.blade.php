@@ -11,13 +11,15 @@
     <title>{{ config('app.name', 'Making Strides for Autism') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/offcanvas.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 </head>
 <body>
     <div id="app">
-        @include('layouts.partials.nav')
+        @include('layouts.partials.nav-offcanvas')
         @yield('content')
     </div>
 
@@ -31,6 +33,8 @@
 
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
-    
+    <script type="text/javascript" src="{{ asset('js/offcanvas.js')}}"></script>
+
+
 </body>
 </html>

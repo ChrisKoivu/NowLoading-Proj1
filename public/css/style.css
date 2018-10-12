@@ -1,10 +1,11 @@
 .ms4a-logo {
-  
-  height:10%;
+    height:10%;
   width: 10%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
 
-
+.login, .register {
+  margin-top:60px;
 }
