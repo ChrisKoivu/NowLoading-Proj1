@@ -5,7 +5,7 @@
   </button>
 
     <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
             </li>
