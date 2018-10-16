@@ -33,8 +33,13 @@
 
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
+    
+    <!-- Theme javascript files -->
     <script type="text/javascript" src="{{ asset('js/offcanvas.js')}}"></script>
-
+    <script type="text/javascript" src="{{ asset('js/feather.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/Chart.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/theme.js')}}"></script>
+   
 
 </body>
 </html>
