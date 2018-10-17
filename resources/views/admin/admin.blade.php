@@ -25,7 +25,7 @@
                   </div>
                 </div>
       
-                <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
+               <!-- <canvas class="my-4" id="myChart" width="900" height="380"></canvas>-->
                 <!-- include admin table -->
                 @include('layouts.partials.admin-table')
 

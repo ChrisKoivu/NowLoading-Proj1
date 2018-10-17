@@ -61,12 +61,16 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
+    {           
+
+        $role =($data['email']===config('app.admin_email')) ? 
+          User::ADMIN_ROLE : User::DEFAULT_ROLE;
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'role' => User::DEFAULT_ROLE,
+            'role' => $role,
         ]);
     }
 }

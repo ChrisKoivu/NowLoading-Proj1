@@ -15,6 +15,9 @@ return [
 
     'name' => env('APP_NAME', 'Making Strides for Autism'),
 
+    // email address for admin user
+    'admin_email' => 'admin@localhost.com',
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
