@@ -5,19 +5,29 @@
   </button>
 
     <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
-            </li>
-            <!-- Authentication Links -->
-       @guest
+      <ul class="navbar-nav mr-auto">              
+          <li class="nav-item">  
+             <a class="nav-link" href="/home" >Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Profile</a>
+           </li>
+        <!-- Authentication Links -->
+        @guest
             <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
         @else
+          <!-- if admin role, generate dashboard link -->
+          <?php
+            if(auth()->user()->isAdmin()){
+            echo '
+            <li class="nav-item">  
+              <a class="nav-link" href="/admin" >Dashboard</a>
+            </li>
+            ';
+            }
+          ?>
+      
          <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                         {{ Auth::user()->name }} <span class="caret"></span>
@@ -32,7 +42,8 @@
                     {{ csrf_field() }}
              </form>
             </div>
-          </li>            
+          </li>        
+
         @endguest
       </ul>   
     </div>
