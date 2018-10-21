@@ -3,7 +3,6 @@
 @section('content') 
     
         
-        
         @auth
 
         <div class="container-fluid">

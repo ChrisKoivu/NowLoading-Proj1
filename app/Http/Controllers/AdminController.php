@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request; 
 
-/* to access volunteer model */
-use App\Volunteer;
+/* to access user model */
+use App\User;
 
 class AdminController extends Controller
 {
@@ -34,7 +34,9 @@ class AdminController extends Controller
     
     public function admin()
     {
-         $message = "Hello Admin!";
-         return view('admin.admin', compact('message'));
+         //$users = DB::table('users')->get();
+         $users = User::all()->toArray();
+    
+         return view('admin.admin', compact('users'));
     }
 }
