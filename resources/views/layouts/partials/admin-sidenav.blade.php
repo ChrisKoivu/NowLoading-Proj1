@@ -46,7 +46,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <span data-feather="file-text"></span>
-                Last quarter
+                Last month
               </a>
             </li>
             
