@@ -20,6 +20,7 @@ class CreateDemographicsTable extends Migration
             $table->string('state');
             $table->string('zip');
             $table->string('phone');
+            $table->string('profession');
            
             // FK to volunteers table
             $table->integer('user_id')->unsigned();
