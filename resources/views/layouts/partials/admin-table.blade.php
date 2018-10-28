@@ -1,5 +1,7 @@
  <!-- begin admin table -->
- <h2>User Maintenance</h2>
+
+ <?php (!empty($_POST)) ? print_r($_POST): ''; ?>
+ <!--<h2>User Maintenance</h2>
  <div class="table-responsive">
    <table class="table table-striped table-sm">
      <thead>
@@ -15,22 +17,45 @@
 
        @foreach($users as $user)
        <tr>
-         <td>{{$user['name']}}</td>
-         <td>{{$user['email']}}</td>
-         <td>{{$user['role']}}</td>
-         <td>
-          <select class="form-control" id="roleSelect">
-            <option>default</option>
-            <option>volunteer</option>
-            <option>admin</option>
-          </select>
-         </td>
-         <td>
-          <button type="submit" class="btn btn-primary mb-2">Save</button>
-         </td>
+         <td></td>
+         <td></td>
+         <td></td>
        </tr>
+      </tbody>
+    </table>
+  </div> -->
+ 
+         <div class ="row">
+            <form method="post" action="">
+                {{csrf_field()}}
+                <input name="_method" type="hidden" value="PATCH">
+                <div class="row">
+                  <div class="col-md-4"></div>
+                  <div class="form-group col-md-4">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" name="name" value="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"></div>
+                    <div class="form-group col-md-4">
+                      <label for="price">Price:</label>
+                      <input type="text" class="form-control" name="price" value="">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4"></div>
+                  <div class="form-group col-md-4">
+                    <button type="submit" class="btn btn-success" style="margin-left:38px">Update Product</button>
+                  </div>
+                </div>
+              </form>
+          </div>
+         
+      
+         
+        
+       
        @endforeach
-     </tbody>
-   </table>
- </div> 
- <!-- end admin table -->
+   <!-- end admin table -->

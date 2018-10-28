@@ -14,3 +14,7 @@
 .navbar-brand img{
   margin-right:10px;
 }
+
+.admin.form-group {
+  display: inline-block;
+}

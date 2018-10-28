@@ -21,7 +21,7 @@
     <div id="app">
         @include('layouts.partials.nav-offcanvas')
         @yield('content')
-    </div>
+    </div><!-- end of app div -->
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

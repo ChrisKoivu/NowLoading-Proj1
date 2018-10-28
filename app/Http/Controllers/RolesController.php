@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class RolesController extends Controller
 {
@@ -68,7 +69,19 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        print_r($id);
+         $user = User::find($id);
+        $this->validate(request(), [
+          'role' => 'required'
+         
+        ]);
+        
+        $user->role = $request->get('role');
+        $user->save();
+        return redirect('admin')->with('success','User role has been updated');
+
+
+          
     }
 
     /**
