@@ -1,7 +1,7 @@
 <!-- admin.blade.php -->
 @extends('layouts.app')
 @section('content') 
-        <?php print_r($_POST); ?>
+        
         
         @auth
 
@@ -17,52 +17,71 @@
           
                    <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
                    -->
-                    <h2>Section title</h2>
+
+                    <h2>User Maintenance</h2><br  />
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div><br />
+                    @endif
+
+                    @if (session('success'))
+                      <div class="alert alert-success">
+                      <p>{{ session('success') }}</p>
+                      </div><br />
+                    @endif
+       
                     <div class="table-responsive">
                       <table class="table table-striped table-sm">
-                        <thead>
+                       <thead>
                           <tr>
-                            <th>#</th>
-                            <th>Header</th>
-                            <th>Header</th>
-                            <th>Header</th>
-                            <th>Header</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            
                           </tr>
                         </thead>
-                        <tbody>
+                       <tbody>
+                        @foreach ($users as $user)
+                        
                           <tr>
-                            <td>1,001</td>
-                            <td>Lorem</td>
-                            <td>ipsum</td>
-                            <td>dolor</td>
-                            <td>sit</td>
+                          <td>{{$user['name']}}</td>
+                          <td>{{$user['email']}}</td>
+                          <td>{{$user['role']}}</td>
+                            
                           </tr>
-                        </tbody>
-                       </table>
-
+                          
+                       <tr><td>
                        <div id ="admin-form-wrap">
-                       <form action="" method="post">
-                        <div class="admin form-group col-md-4"> 
-                          <label for="change-role">Select New Role:</label>
-                          <select class="form-control d-inline-block" id="change-role" name="select-role"
+                        <form method="post" action="{{action('RolesController@update', $user['id'])}}">                        <div class="admin form-group col-md-6"> 
+                            {{csrf_field()}}
+                            <input name="_method" type="hidden" value="PATCH">
+                             <label for="change-role">Select New Role:</label>
+                          <select class="form-control d-inline-block" id="change-role" name="role"
                           style = "width:150px;">
                               <option>default</option>
                               <option>volunteer</option>
-                              <option>Admin</option>
+                              <option>admin</option>
                           </select>
                         </div>
-                        <div class="admin form-group col-md-4">
-                      
-                              <button type="submit" class="btn btn-primary">Save</button>
+                        <div class="admin form-group col-md-2">
+                              <button type="submit" name="role-submit" class="btn btn-primary">Save</button>
                         </div> 
                         </form>
                         </div>
-
+                      </td>
+                    </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
+                      
                     </div><!-- end of table responsive -->
                   </main><!-- end of main -->
-
-                </div> <!-- end of row -->
-                
+                </div> <!-- end of row -->           
               </div> <!-- end of container-fluid -->
           
         @endauth

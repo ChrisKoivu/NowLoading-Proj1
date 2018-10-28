@@ -69,19 +69,15 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        print_r($id);
-         $user = User::find($id);
+        $user = User::find($id);
+        
         $this->validate(request(), [
           'role' => 'required'
-         
         ]);
-        
+         
         $user->role = $request->get('role');
         $user->save();
-        return redirect('admin')->with('success','User role has been updated');
-
-
-          
+        return redirect('admin')->with('success', $user->name . ' role has been updated to ' . $user->role);
     }
 
     /**
