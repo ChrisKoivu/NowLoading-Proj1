@@ -23,8 +23,9 @@
         @yield('content')
     </div><!-- end of app div -->
 
-    <!-- Scripts -->
+    <!-- App Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    
     <!-- JQuery -->
     <script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
 
@@ -39,7 +40,13 @@
     <script type="text/javascript" src="{{ asset('js/feather.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/Chart.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/theme.js')}}"></script>
-   
+    
+    <!-- CKEditor -->
+    <script src="https://cdn.ckeditor.com/4.10.1/full-all/ckeditor.js"></script>
 
+    <!-- js for this site -->
+    <script type="text/javascript" src="{{ asset('js/style.js')}}"></script>
+
+     
 </body>
 </html>
