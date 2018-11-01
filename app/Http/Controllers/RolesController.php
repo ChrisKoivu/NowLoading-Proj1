@@ -75,9 +75,13 @@ class RolesController extends Controller
           'role' => 'required'
         ]);
          
-        $user->role = $request->get('role');
-        $user->save();
-        return redirect('admin')->with('success', $user->name . ' role has been updated to ' . $user->role);
+        if(Auth::user()->permission('canChangeRole')){
+           $user->role = $request->get('role');
+           $user->save();
+           return redirect('admin')->with('success', $user->name . ' role has been updated to ' . $user->role);
+        } else {
+            return redirect('admin')->with('failure', 'this action is not permitted for your user role');
+        }
     }
 
     /**

@@ -34,6 +34,13 @@
                       <p>{{ session('success') }}</p>
                       </div><br />
                     @endif
+
+                    @if (session('failure'))
+                      <div class="alert alert-danger">
+                      <p>{{ session('failure') }}</p>
+                      </div><br />
+                    @endif
+       
        
                     <div class="table-responsive">
                       <table class="table table-striped table-sm">
@@ -69,7 +76,7 @@
                           </select>
                         </div>
                         <div class="admin form-group col-md-2">
-                              <button type="submit" name="role-submit" class="btn btn-primary <?php Auth::user()->permission('canChangeRole')? '': 'disabled';?>">Save</button>
+                              <button type="submit" name="role-submit" class="btn btn-primary">Save</button>
                         </div> 
                         </form>
                         </div>
