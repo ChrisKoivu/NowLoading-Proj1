@@ -69,7 +69,7 @@
                           </select>
                         </div>
                         <div class="admin form-group col-md-2">
-                              <button type="submit" name="role-submit" class="btn btn-primary">Save</button>
+                              <button type="submit" name="role-submit" class="btn btn-primary <?php Auth::user()->permission('canChangeRole')? '': 'disabled';?>">Save</button>
                         </div> 
                         </form>
                         </div>
