@@ -2,6 +2,9 @@
 @extends('layouts.app')
 @section('content') 
     <div class="container">
+        <div class="d-flex">
+                <a href="{{action('PagesController@create')}}" class="btn btn-primary">Create</a>
+        </div>
         <br />
         @if (session('success'))
         <div class="alert alert-success">
