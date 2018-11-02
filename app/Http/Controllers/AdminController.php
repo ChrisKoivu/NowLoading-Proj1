@@ -34,7 +34,6 @@ class AdminController extends Controller
     
     public function admin()
     {
-         //$users = DB::table('users')->get();
          $users = User::all()->toArray();
     
          return view('admin.admin', compact('users'));

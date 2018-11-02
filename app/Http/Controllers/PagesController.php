@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Page;
 
 class PagesController extends Controller
 {
@@ -13,8 +14,9 @@ class PagesController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $pages = Page::all()->toArray();
+        return view('pages.index', compact('pages'));
+    }   
 
     /**
      * Show the form for creating a new resource.
@@ -23,7 +25,7 @@ class PagesController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.create');
     }
 
     /**

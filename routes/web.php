@@ -18,6 +18,10 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('roles','RolesController');
+
+Route::resource('pages','PagesController');
+
 /** verify admin before routing */
 Route::get('/admin', 'AdminController@admin')    
     ->middleware('is_admin')    

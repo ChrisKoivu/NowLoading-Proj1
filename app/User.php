@@ -17,12 +17,20 @@ class User extends Authenticatable
 
     const ADMIN_ROLE = 'admin';
     const DEFAULT_ROLE = 'default';
+    const VOLUNTEER_ROLE = 'volunteer';
+    
     const SURVEY_COMPLETE = false;
 
     /** verify user is admin */
     public function isAdmin()    {        
        return $this->role === self::ADMIN_ROLE;    
     }
+
+     /** verify user is volunteer */
+     public function isVolunteer()    {        
+        return $this->role === self::VOLUNTEER_ROLE;    
+     }
+ 
 
     /**
      * The attributes that are mass assignable.
@@ -57,6 +65,43 @@ class User extends Authenticatable
     
         return $this->hasOne('App\Survey');
     }
+
+    /**
+     * check if user role has permission to perform
+     * the requested action. returns true if they
+     * have the permission.
+     * param $action - the permission to check.
+     * either canCreateContent, canEditContent,
+     * canChangeRole, or canReadReports. 
+     */
+    public function permission($action) {
+        $permitted = array(
+          'admin' => array(
+            'role' => 'admin',
+            'canCreateContent'=> true,
+            'canEditContent'=> true,
+            'canChangeRole'=> true,
+            'canReadReports'=> true,
+          ),
+          'volunteer' => array(
+            'role' => 'volunteer',
+            'canCreateContent'=> false,
+            'canEditContent'=> false,
+            'canChangeRole'=> false,
+            'canReadReports'=> true,
+          ),
+          'default' => array(
+            'role' => 'default',
+            'canCreateContent'=> false,
+            'canEditContent'=> false,
+            'canChangeRole'=> false,
+            'canReadReports'=> false,
+          ),
+        );
+      
+        return $permitted[$this->role][$action];
+      }
+      
 
 
 }

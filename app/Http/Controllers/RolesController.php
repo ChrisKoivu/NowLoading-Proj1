@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+use App\User;
 
 class RolesController extends Controller
 {
@@ -68,7 +71,19 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        
+        $this->validate(request(), [
+          'role' => 'required'
+        ]);
+         
+        if(Auth::user()->permission('canChangeRole')){
+           $user->role = $request->get('role');
+           $user->save();
+           return redirect('admin')->with('success', $user->name . ' role has been updated to ' . $user->role);
+        } else {
+            return redirect('admin')->with('failure', 'this action is not permitted for your user role');
+        }
     }
 
     /**
