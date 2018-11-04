@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
-use App\Http\Resources\UserResource;
-use App\Http\Resources\UserCollection;
     
 /**
  * this class is for the api calls for json
@@ -23,7 +21,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return new UserCollection(User::all());
+        return User::all();
     }
 
    
@@ -36,7 +34,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return new UserResource($user);
+        
     }
 
 }
