@@ -23,32 +23,37 @@ class UserMaintenance extends Component {
         console.log(this.state.users);
         return this.state.users.map(user => {
           return (
-            <li key={user.id} >
-              {user.name}
-            </li>
+            <tr key={user.id} >
+              <td>
+               {user.name}
+              </td>
+              <td>
+                {user.email}
+              </td>
+              <td>
+                {user.role}
+              </td>
+            </tr>
           );
         })
       }
 
       render () {
-        
         return (
-          <div className='container py-4'>
-            <div className='row justify-content-center'>
-              <div className='col-md-8'>
-                <div className='card'>
-                  <div className='card-header'>All projects</div>
-                  <div className='card-body'>
-                    <ul className='list-group list-group-flush'>
-                     
-                    { this.listUsers() }
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+           <div className="table-responsive">
+              <table className="table table-striped table-sm">
+                <thead>
+                   <tr>
+                      <th>Username</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                   </tr>
+                </thead>
+                <tbody>
+                  { this.listUsers() }
+                </tbody>
+              </table>
+           </div>
         )
       }
     }

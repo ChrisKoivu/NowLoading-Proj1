@@ -41177,24 +41177,12 @@ var App = function (_Component) {
                     'div',
                     { className: 'row' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'col-md-8 col-md-offset-2' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'div',
-                            { className: 'panel panel-default' },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'panel-heading' },
-                                'Example Component'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'panel-body' },
-                                'I\'m an example component!',
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__UserMaintenance__["a" /* default */], null)
-                            )
-                        )
-                    )
+                        'h2',
+                        null,
+                        'User Maintenance'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__UserMaintenance__["a" /* default */], null)
                 )
             );
         }
@@ -53787,9 +53775,23 @@ var UserMaintenance = function (_Component) {
       console.log(this.state.users);
       return this.state.users.map(function (user) {
         return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'li',
+          'tr',
           { key: user.id },
-          user.name
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'td',
+            null,
+            user.name
+          ),
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'td',
+            null,
+            user.email
+          ),
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'td',
+            null,
+            user.role
+          )
         );
       });
     }
@@ -53799,31 +53801,37 @@ var UserMaintenance = function (_Component) {
 
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
         'div',
-        { className: 'container py-4' },
+        { className: 'table-responsive' },
         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          { className: 'row justify-content-center' },
+          'table',
+          { className: 'table table-striped table-sm' },
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
-            { className: 'col-md-8' },
+            'thead',
+            null,
             __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              'div',
-              { className: 'card' },
+              'tr',
+              null,
               __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-header' },
-                'All projects'
+                'th',
+                null,
+                'Username'
               ),
               __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-body' },
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'ul',
-                  { className: 'list-group list-group-flush' },
-                  this.listUsers()
-                )
+                'th',
+                null,
+                'Email'
+              ),
+              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'th',
+                null,
+                'Role'
               )
             )
+          ),
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'tbody',
+            null,
+            this.listUsers()
           )
         )
       );
