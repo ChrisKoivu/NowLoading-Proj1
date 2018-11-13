@@ -14,6 +14,8 @@
 
 Auth::routes();
 
+
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/resourcedir', 'HomeController@index')->name('resourcedir');
@@ -27,3 +29,4 @@ Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')    
     ->name('admin');
 
+    
