@@ -20,8 +20,8 @@
                                 <h1 class="jumbotron-heading">Resource Directory</h1>
                                 <p class="lead text-muted">This is the resource directory</p>
                                 <p>
-                                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                                    <a href="#" class="btn btn-primary my-2">Button 1</a>
+                                    <a href="#" class="btn btn-secondary my-2">Button 2</a>
                                 </p>
                             </div>
                         </section>
