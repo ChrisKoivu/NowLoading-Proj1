@@ -13,7 +13,7 @@
     <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">              
           <li class="nav-item">  
-             <a class="nav-link" href="/home" >Home</a>
+             <a class="nav-link" href="/resourcedir" >Home</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#">Profile</a>
