@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
+import User from './User'
 
 class UserMaintenance extends Component {
     constructor () {
@@ -19,22 +20,16 @@ class UserMaintenance extends Component {
   
       }
 
+      
       listUsers(){
-        console.log(this.state.users);
         return this.state.users.map(user => {
           return (
             <tr key={user.id} >
-              <td>
-               {user.name}
-              </td>
-              <td>
-                {user.email}
-              </td>
-              <td>
-                {user.role}
-              </td>
+              <User user={this.user}/>
             </tr>
+            
           );
+          
         })
       }
 
@@ -51,6 +46,7 @@ class UserMaintenance extends Component {
                 </thead>
                 <tbody>
                   { this.listUsers() }
+                
                 </tbody>
               </table>
            </div>
