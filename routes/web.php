@@ -18,7 +18,7 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/resourcedir', 'HomeController@index')->name('resourcedir');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('roles','RolesController');
 

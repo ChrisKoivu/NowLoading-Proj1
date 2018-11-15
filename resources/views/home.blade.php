@@ -1,60 +1,117 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading"></div>
-
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h1>Resource Directory</h1>
-                    This is the resource directory!<br>
-                    <div>
-                        <h3>Diagnosis</h3><br>
-                        <img>
-                        <p>Description</p><br>
-                        <a href="">Resource 1</a><br>
-                        <a href="">Resource 2</a><br>
-                        <a href="">Resource 3</a><br>
-                        <a href="">Resource 4</a><br>
-                        <a href="">Resource 5</a><br>
-                    </div>
-                    <div>
-                        <h3>Education</h3>
-                        <img>
-                        <p>Description</p><br>
-                        <a href="">Resource 1</a><br>
-                        <a href="">Resource 2</a><br>
-                        <a href="">Resource 3</a><br>
-                        <a href="">Resource 4</a><br>
-                        <a href="">Resource 5</a><br>
-                    </div>
-                    <div>
-                        <h3>Employment</h3><br>
-                        <img>
-                        <p>Description</p><br>
-                        <a href="">Resource 1</a><br>
-                        <a href="">Resource 2</a><br>
-                        <a href="">Resource 3</a><br>
-                        <a href="">Resource 4</a><br>
-                        <a href="">Resource 5</a><br>
-                    </div>
-                    <div>
-                        <h3>Etc</h3>
-                        <img>
-                        <p>Description</p><br>
-                        <a href="">Resource 1</a><br>
-                        <a href="">Resource 2</a><br>
-<a href="">Resource 3</a><br>
-                        <a href="">Resource 4</a><br>
-                        <a href="">Resource 5</a><br>
-                    </div>
+                    <main role="main">
+                        <section class="jumbotron text-center">
+                            <div class="container">
+                                <h1 class="jumbotron-heading">Resource Directory</h1>
+                                <p class="lead text-muted">This is the resource directory</p>
+                                <p>
+                                    <a href="#" class="btn btn-primary my-2">Button 1</a>
+                                    <a href="#" class="btn btn-secondary my-2">Button 2</a>
+                                </p>
+                            </div>
+                        </section>
+                        <div class="album py-5 bg-light">
+                            <div class="container">
+                  
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 shadow-sm">
+                                        <img class="card-img-top" src="{{url('images/autismedu.jpg')}}" width="400" height="300" alt="Card image cap">
+                                            <div class="card-body">
+                                            <p class="card-text">Description</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 shadow-sm">
+                                        <img class="card-img-top" src="{{url('images/autismemp.jpg')}}" width="400" height="300" alt="Card image cap">
+                                            <div class="card-body">
+                                            <p class="card-text">Description</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 shadow-sm">
+                                        <img class="card-img-top" src="{{url('images/timingofauti.jpg')}}" width="400" height="300" alt="Card image cap">
+                                            <div class="card-body">
+                                            <p class="card-text">Description</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 shadow-sm">
+                                        <img class="card-img-top" src="{{url('images/autismedu.jpg')}}" width="400" height="300" alt="Card image cap">
+                                            <div class="card-body">
+                                            <p class="card-text">Description</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 shadow-sm">
+                                        <img class="card-img-top" src="{{url('images/autismemp.jpg')}}" width="400" height="300" alt="Card image cap">
+                                            <div class="card-body">
+                                            <p class="card-text">Description</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card mb-4 shadow-sm">
+                                        <img class="card-img-top" src="{{url('images/timingofauti.jpg')}}" width="400" height="300" alt="Card image cap">
+                                            <div class="card-body">
+                                            <p class="card-text">Description</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>   
                 </div>
             </div>
         </div>
