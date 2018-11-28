@@ -14,9 +14,10 @@
                       <h1 class="h2">Administrator Dashboard</h1>
                      
                     </div>
-          
-                   <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-                   -->
+                    
+                    <h5> New Users Registered </h5>
+                    <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+                   
 
                     <h2>User Maintenance</h2><br  />
                     @if ($errors->any())
