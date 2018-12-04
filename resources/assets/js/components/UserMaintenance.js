@@ -1,4 +1,4 @@
-import axios from 'axios'
+
 import React, { Component } from 'react'
 import User from './User'
 
@@ -10,28 +10,10 @@ class UserMaintenance extends Component {
       }
     }
 
-    componentDidMount () {
-        
-          axios.get('/api/users').then(response => {
-            this.setState({
-              users: response.data
-            })
-          })
-  
-      }
+   
 
       
-      listUsers(){
-        return this.state.users.map(user => {
-          return (
-            <tr key={user.id} >
-              <User user={this.user}/>
-            </tr>
-            
-          );
-          
-        })
-      }
+      
 
       render () {
         return (
@@ -45,7 +27,7 @@ class UserMaintenance extends Component {
                    </tr>
                 </thead>
                 <tbody>
-                  { this.listUsers() }
+                  
                 
                 </tbody>
               </table>

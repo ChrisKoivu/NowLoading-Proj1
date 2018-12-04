@@ -10,7 +10,7 @@ const User = ({ user }) => {
 
   //Else, display the product data
 
-  console.log(user);
+  
   return (
     <div>
       <tr>
