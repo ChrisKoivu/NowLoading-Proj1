@@ -19,7 +19,7 @@ export default class App extends Component {
             <div className="container">
                 <div className="row">
                 <h2>User Maintenance</h2><br />
-                  <UserMaintenance />
+                  <UserMaintenance users={this.state.users} />
                 </div>
             </div>
                    

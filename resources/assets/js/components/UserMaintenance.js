@@ -5,9 +5,7 @@ import User from './User'
 class UserMaintenance extends Component {
     constructor () {
       super()
-      this.state = {
-        users: []
-      }
+     
     }
 
    
@@ -27,7 +25,7 @@ class UserMaintenance extends Component {
                    </tr>
                 </thead>
                 <tbody>
-                  
+                   console.log(this.props.users);
                 
                 </tbody>
               </table>
