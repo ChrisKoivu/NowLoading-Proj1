@@ -1,28 +1,34 @@
 import axios from 'axios'
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import UserMaintenance from './UserMaintenance'
+import Users from './Users'
 
 export default class App extends Component {
+    constructor(props) {
+        super(props);
+        //Initialize the state in the constructor
+    
+        this.state = {
+          users: []
+        }
+    }
 
-    componentDidMount () {
-          console.log("component mounted");
+
+    componentDidMount () {          
           axios.get('/api/users').then(response => {
             this.setState({
               users: response.data
-            })
-          })
-  
-      }
+            })        
+          })      
+    }
+
     render() {
         return (
             <div className="container">
-                <div className="row">
-                <h2>User Maintenance</h2><br />
-                  <UserMaintenance users={this.state.users} />
+                <div className="row">                
+                  <Users users={this.state.users} />
                 </div>
-            </div>
-                   
+            </div>                   
         );
     }
 }

@@ -14,11 +14,22 @@ class Users extends Component {
         );
       });
     }
+
     return (
-      <div className="users">
-        <h3>Users</h3>
-        <table>{users}</table>
-        
+      <div className="users table-responsive">
+            <h2>User Maintenance</h2><br />
+            <table className="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {users}
+                </tbody>
+            </table>        
       </div>
     );
   }
@@ -26,8 +37,8 @@ class Users extends Component {
 
 /*
 
-Projects.propTypes = {
-  projects: React.PropTypes.array,
+Users.propTypes = {
+  users: React.PropTypes.array,
   onDelete: React.PropTypes.func
 }*/
 
