@@ -14,10 +14,11 @@ class Users extends Component {
       });
     }
     return (
-      <div className="users">
+      <div className="users table-responsive">
         <h3>Users</h3>
-        <table>
+        <table className="table table-striped table-sm">
           <tbody>
+            
             {users}
           </tbody>
         </table>        

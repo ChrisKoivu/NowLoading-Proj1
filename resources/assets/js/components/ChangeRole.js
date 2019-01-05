@@ -15,13 +15,19 @@ class ChangeRole extends Component {
   render() {
       
     return (     
-        <form onSubmit ={this.handleSubmit.bind(this)}>
-          <select ref = "role">
+        <form className = "d-flex" onSubmit ={this.handleSubmit.bind(this)}>
+          <div className ="change-role input-group">
+          <label htmlFor="change-role">Select New Role:</label>
+          <select className = "form-control d-inline-block" ref = "role">
             <option value="default">default</option>
             <option value="volunteer">volunteer</option>
             <option value="admin">admin</option>  
           </select>
-          <input type="submit" value="Save" />
+          
+          
+          <input type="submit" className = "btn btn-primary" value="Save" />
+          </div>
+          
         </form>
     );
   }

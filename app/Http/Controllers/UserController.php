@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Resources\UserResource as UserResource;
 
 use App\User;
     
@@ -32,9 +33,50 @@ class UserController extends Controller
      *
      * @return UserResource
      */
-    public function show(User $user)
+    public function show($id)
     {
-        
+        // Get user
+        $user = User::findOrFail($id);
+        return new UserResource($user);
+       
+
     }
+
+    
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        if($user = $request->isMethod('patch')){
+            $user =  User::findOrFail($request->id);
+            $user->role = $request->input('role');
+            
+            if($user->save()) {
+                return new UserResource($user);
+            }
+        }
+    }
+
+     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+        if($user->save()) {
+            return new UserResource($user);
+        }
+    }
+
+
 
 }

@@ -14,12 +14,18 @@ use Illuminate\Http\Request;
 */
 
 
-
+// return all users
 Route::get('users', 'UserController@index');
 
 
+ 
 
+// Update user
+//Route::put('users/{id}', 'UserController@update');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Update article
+Route::patch('users', 'UserController@store');
+
+// List single user
+Route::get('users/{id}', 'UserController@show');
+

@@ -15,7 +15,7 @@ class User extends React.Component {
   
   render() {
     return (
-      <tr className="user">
+      <tr className="user d-flex">
         <td><strong>{this.props.user.name}</strong></td>
         <td>{this.props.user.email}</td>
         <td>{this.props.user.role}</td>     
