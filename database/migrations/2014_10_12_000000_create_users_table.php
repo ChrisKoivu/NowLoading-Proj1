@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('role')->default('default');            
             $table->boolean('survey_complete')->default(false);
-            $table->string('auth_token')->default('');
+            $table->text('auth_token')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
