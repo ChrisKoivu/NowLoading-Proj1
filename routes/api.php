@@ -14,25 +14,24 @@ use Illuminate\Http\Request;
 */
 
 
-// return all users
-Route::get('users', 'UserController@index');
+    // return all users
+    Route::get('users', 'UserController@index');
+    
+    // Update user
+    Route::patch('users', 'UserController@store');
 
 
- 
-
-// Update user
-//Route::put('users/{id}', 'UserController@update');
 
 
-// Update user
-Route::patch('users', 'UserController@store');
+    Route::post('register', 'UserController@register');
+    Route::post('login', 'UserController@authenticate');
+   
 
-// List single user
-Route::get('users/{id}', 'UserController@show');
-
-
-Route::post('user/login', 'UserController@login');
-Route::post('user/register', 'UserController@register');
+    Route::group(['middleware' => ['jwt.verify']], function() {
+        Route::get('user', 'UserController@getAuthenticatedUser');
+        // List single user
+        Route::get('users/{id}', 'UserController@show');
+    });
 
 
 //Route::middleware('auth:api')->get('/user', function (Request $request) {

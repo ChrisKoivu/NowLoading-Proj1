@@ -18,8 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('role')->default('default');
+            $table->string('role')->default('default');            
             $table->boolean('survey_complete')->default(false);
+            $table->string('auth_token')->default('');
             $table->rememberToken();
             $table->timestamps();
         });
