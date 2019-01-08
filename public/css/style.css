@@ -34,5 +34,35 @@
   margin-right:10px;
 }
 
+.table-sm td, .table-sm th{
+  border:none;
+}
+
+tr.user.d-flex{
+  justify-content: space-around;
+}
+
+tr.user td{
+  align-self:center;
+  margin-left:10px;
+  margin-right: 10px;
+  text-align:center;
+}
+.change-role label {
+  margin-bottom: 0px;
+  align-self:center;
+  padding-right: 10px;
+}
+
+.change-role .btn.btn-primary {
+  margin-left:10px;
+}
+
+.user-table-heading th{
+  margin-left:10px;
+  margin-right: 10px;
+  text-align:center;
+}
+
 
 /* end navbar styling */

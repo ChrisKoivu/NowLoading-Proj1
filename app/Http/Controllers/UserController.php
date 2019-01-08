@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;    
+use App\Http\Resources\UserResource as UserResource;
 use App\User;
 use JWTAuth;
 use JWTAuthException;
+
 
 /**
  * this class is for the api calls for json
@@ -113,7 +113,9 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         return new UserResource($user);
        
+
     }
+
     
     /**
      * Store a newly created resource in storage.
@@ -132,6 +134,8 @@ class UserController extends Controller
             }
         }
     }
+     
+
      /**
      * Update the specified resource in storage.
      *
@@ -147,6 +151,7 @@ class UserController extends Controller
             return new UserResource($user);
         }
     }
+
 
 
 }
