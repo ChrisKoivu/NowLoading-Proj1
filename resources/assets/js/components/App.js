@@ -13,7 +13,13 @@ export default class App extends Component {
 
     this.state = {
       users: [],
-      user:[]
+      user:[],
+      authUser:[
+        {
+          email: "",
+          password: ""
+        }      
+      ]
     };
     this.handleRoleChange = this.handleRoleChange.bind(this);
   }
@@ -37,15 +43,6 @@ export default class App extends Component {
     return users;
   }
 
-  retrieveUser(id){
-    axios.get('/api/users/' + id)  
-    .then(response => {
-      this.setState({
-        user: response.data        
-      })
-    })    
-  }
-
   updateUser(id, role){     
     axios.patch('/api/users/?id=' + id + '&role=' + role)
     .then(response => {
@@ -56,6 +53,10 @@ export default class App extends Component {
     .catch(function (error) {
       console.log(error);
     });
+  }
+
+  handleLogin(){
+
   }
 
   handleRoleChange(role, id) {
@@ -71,6 +72,7 @@ export default class App extends Component {
   componentWillMount(){
     axios.get('/api/users')
       .then(response => {
+        console.log(response);
         this.setState({
           users: response.data
         })

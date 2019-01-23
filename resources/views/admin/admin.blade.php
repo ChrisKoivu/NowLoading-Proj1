@@ -4,7 +4,7 @@
         
         
         @auth
-
+       
         <div class="container-fluid">
             <div class="row"> 
                <!-- include sidenav -->

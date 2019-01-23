@@ -41174,7 +41174,11 @@ var App = function (_Component) {
 
     _this.state = {
       users: [],
-      user: []
+      user: [],
+      authUser: [{
+        email: "",
+        password: ""
+      }]
     };
     _this.handleRoleChange = _this.handleRoleChange.bind(_this);
     return _this;
@@ -41203,29 +41207,21 @@ var App = function (_Component) {
       return users;
     }
   }, {
-    key: 'retrieveUser',
-    value: function retrieveUser(id) {
-      var _this2 = this;
-
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/users/' + id).then(function (response) {
-        _this2.setState({
-          user: response.data
-        });
-      });
-    }
-  }, {
     key: 'updateUser',
     value: function updateUser(id, role) {
-      var _this3 = this;
+      var _this2 = this;
 
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.patch('/api/users/?id=' + id + '&role=' + role).then(function (response) {
-        _this3.setState({
+        _this2.setState({
           user: response.data
         });
       }).catch(function (error) {
         console.log(error);
       });
     }
+  }, {
+    key: 'handleLogin',
+    value: function handleLogin() {}
   }, {
     key: 'handleRoleChange',
     value: function handleRoleChange(role, id) {
@@ -41238,10 +41234,11 @@ var App = function (_Component) {
   }, {
     key: 'componentWillMount',
     value: function componentWillMount() {
-      var _this4 = this;
+      var _this3 = this;
 
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/users').then(function (response) {
-        _this4.setState({
+        console.log(response);
+        _this3.setState({
           users: response.data
         });
       });
