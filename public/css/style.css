@@ -10,6 +10,17 @@
   display: inline-block;
 }
 
+.container > form:nth-child(1) {
+  margin-bottom:30px;
+  padding-left:0px;
+  
+}
+
+.container > form:nth-child(1) > label:nth-child(1){
+  padding-right:15px;
+  font-weight:bold;
+}
+
 /* end admin page styling */
 
 /* begin navbar styling */
@@ -43,10 +54,11 @@ tr.user.d-flex{
 }
 
 tr.user td{
+  min-width:160px;
+  text-align: left;
   align-self:center;
   margin-left:10px;
   margin-right: 10px;
-  text-align:center;
 }
 .change-role label {
   margin-bottom: 0px;

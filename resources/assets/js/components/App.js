@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 /**import './App.css';*/
 import Users from './Users';
-
-
+import FilterUsers from './FilterUsers';
 
 export default class App extends Component {
   constructor(props) {
@@ -12,8 +11,9 @@ export default class App extends Component {
     //Initialize the state in the constructor
 
     this.state = {
+      searchTerm:"",
       users: [],
-      user:[],
+      data:[],
       authUser:[
         {
           email: "",
@@ -22,6 +22,7 @@ export default class App extends Component {
       ]
     };
     this.handleRoleChange = this.handleRoleChange.bind(this);
+    this.filterUser = this.filterUser.bind(this);
   }
 
   /**
@@ -69,12 +70,46 @@ export default class App extends Component {
     );
   }
 
+  /**
+   * filters user object on the admin board based on the 
+   * letters entered. we are passing the search term state
+   * to this function
+   * @param {*} searchTerm 
+   */
+  filterUser(searchTerm){
+      let users = this.state.data;
+      this.setState({ searchTerm: searchTerm });      
+      let filteredArray = this.user_filter(users, searchTerm);
+      this.setState({
+        users: filteredArray
+      });      
+  }
+
+  /**
+   * returns the user object whose name matches the 
+   * search terms passed to this function
+   * @param {*} users 
+   * @param {*} searchTerm 
+   */
+  user_filter(users, searchTerm){
+    let arr = [];
+    users.map(function(fn){
+      name = fn.name.toLowerCase();
+      if(name.includes(searchTerm.toLowerCase())){
+        arr.push(fn);
+      }else{
+        return users; 
+      }
+    })     
+    return arr;
+  }
+
   componentWillMount(){
     axios.get('/api/users')
       .then(response => {
-        console.log(response);
         this.setState({
-          users: response.data
+          users: response.data,
+          data: response.data,
         })
      });
 
@@ -82,8 +117,9 @@ export default class App extends Component {
   }
 
   render() {
-    return (
+    return (      
       <div className="container">
+        <FilterUsers searchTerm={this.state.searchTerm} onFilterUser ={this.filterUser} />
         <div className = "row">
            <Users users={this.state.users} onRoleChange={this.handleRoleChange} />
         </div>
