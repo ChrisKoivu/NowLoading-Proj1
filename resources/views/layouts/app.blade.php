@@ -18,6 +18,9 @@
 
 </head>
 <body>
+
+
+    
     <div id="app">
         @include('layouts.partials.nav-offcanvas')
         @yield('content')
