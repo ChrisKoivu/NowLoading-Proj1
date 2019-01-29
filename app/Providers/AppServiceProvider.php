@@ -3,11 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-<<<<<<< HEAD
-use Illuminate\Support\Facades\Schema; 
-=======
 use Illuminate\Support\Facades\Schema;
->>>>>>> reactjs
 
 class AppServiceProvider extends ServiceProvider
 {
