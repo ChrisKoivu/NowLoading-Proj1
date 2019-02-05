@@ -16,7 +16,7 @@
                     </div>
                     
                     <h5> New Users Registered </h5>
-                    <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+                    <canvas class="my-4 w-100" id="myChart" width="225" height="95"></canvas>
                    
 
                     <br  />
@@ -28,7 +28,7 @@
                             @endforeach
                         </ul>
                     </div><br />
-                    @endif
+                    @endif                                 
 
                     @if (session('success'))
                       <div class="alert alert-success">
