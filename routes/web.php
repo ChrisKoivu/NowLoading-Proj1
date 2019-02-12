@@ -14,6 +14,9 @@
 
 Auth::routes();
 
+
+
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -27,6 +30,10 @@ Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')    
     ->name('admin');
 
+<<<<<<< HEAD
 Route::get('auth/{driver}', ['as' => 'socialAuth', 'uses' => 'Auth\SocialController@redirectToProvider']);
 Route::get('auth/{driver}/callback', ['as' => 'socialAuthCallback', 'uses' => 'Auth\SocialController@handleProviderCallback']);
 
+=======
+    
+>>>>>>> cb99281a5b6925240e2a45264c5ccfd2eaf741e5

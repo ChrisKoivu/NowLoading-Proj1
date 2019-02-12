@@ -4,8 +4,11 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+    
 
-class User extends Authenticatable
+ 
+class User extends Authenticatable implements JWTSubject
 {
       /**
      * Author: Chris Koivu
@@ -38,8 +41,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+<<<<<<< HEAD
         'name', 'email', 'password', 'role','survey_complete', 'city', 'street', 'street_num',
         'zip', 'phone', 'state', 'country', 'profession',
+=======
+        'name', 'email', 'password', 'role','survey_complete', 'auth_token',
+>>>>>>> cb99281a5b6925240e2a45264c5ccfd2eaf741e5
     ];
 
     /**
@@ -51,9 +58,20 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+<<<<<<< HEAD
     protected $casts = [
       'settings' => 'array'
     ];
+=======
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+>>>>>>> cb99281a5b6925240e2a45264c5ccfd2eaf741e5
 
     /**
      * Get the activity associated with this User 
