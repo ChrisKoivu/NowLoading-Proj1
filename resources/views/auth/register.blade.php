@@ -138,7 +138,7 @@ function geolocate() {
     <div class="form-group row{{ $errors->has('address') ? ' has-error' : '' }}">
                             <label for="address" class="col-md-4 control-label">Street Address</label>
                             <div class="col-md-2">
-                                <input id="street_number" type="text" class="form-control" name="street_num" value="{{ old('city') }}" required autofocus>
+                                <input id="street_number" type="text" class="form-control" name="street_num" value="{{ old('city') }}" required autofocus readonly>
 
                                 @if ($errors->has('address'))
                                     <span class="help-block">
@@ -147,7 +147,7 @@ function geolocate() {
                                 @endif
                             </div>
                             <div class="col-md-4">
-                                <input id="route" type="text" class="form-control" name="street" value="{{ old('city') }}" required autofocus>
+                                <input id="route" type="text" class="form-control" name="street" value="{{ old('city') }}" required autofocus readonly>
 
                                 @if ($errors->has('address'))
                                     <span class="help-block">
@@ -161,7 +161,7 @@ function geolocate() {
                             <label for="city" class="col-md-4 control-label">City</label>
 
                             <div class="col-md-6">
-                                <input id="locality" type="text" class="form-control" name="city" value="{{ old('city') }}" required autofocus>
+                                <input id="locality" type="text" class="form-control" name="city" value="{{ old('city') }}" required autofocus readonly>
 
                                 @if ($errors->has('city'))
                                     <span class="help-block">
@@ -175,7 +175,7 @@ function geolocate() {
                             <label for="state" class="col-md-4 control-label">State</label>
 
                             <div class="col-md-6">
-                                <input id="administrative_area_level_1" type="text" class="form-control" name="state" value="{{ old('state') }}" required autofocus>
+                                <input id="administrative_area_level_1" type="text" class="form-control" name="state" value="{{ old('state') }}" required autofocus readonly>
 
                                 @if ($errors->has('state'))
                                     <span class="help-block">
@@ -189,7 +189,7 @@ function geolocate() {
                             <label for="zip" class="col-md-4 control-label">Zip Code</label>
 
                             <div class="col-md-6">
-                                <input id="postal_code" type="text" class="form-control" name="zip" value="{{ old('zip') }}" required autofocus>
+                                <input id="postal_code" type="text" class="form-control" name="zip" value="{{ old('zip') }}" required autofocus readonly>
 
                                 @if ($errors->has('zip'))
                                     <span class="help-block">
@@ -203,7 +203,7 @@ function geolocate() {
                             <label for="country" class="col-md-4 control-label">Country</label>
 
                             <div class="col-md-6">
-                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}" required autofocus>
+                                <input id="country" type="text" class="form-control" name="country" value="{{ old('country') }}" required autofocus readonly>
 
                                 @if ($errors->has('country'))
                                     <span class="help-block">
@@ -212,70 +212,6 @@ function geolocate() {
                                 @endif
                             </div>
                         </div>
-
-
-
-
-                        <!--
-                        <div class="form-group row{{ $errors->has('address') ? ' has-error' : '' }}">
-                            <label for="address" class="col-md-4 control-label">Address*</label>
-
-                            <div class="col-md-6">
-                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required autofocus>
-
-                                @if ($errors->has('address'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('address') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row{{ $errors->has('city') ? ' has-error' : '' }}">
-                            <label for="city" class="col-md-4 control-label">City</label>
-
-                            <div class="col-md-6">
-                                <input id="city" type="text" class="form-control" name="city" value="{{ old('city') }}" required autofocus>
-
-                                @if ($errors->has('city'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('city') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row{{ $errors->has('state') ? ' has-error' : '' }}">
-                            <label for="state" class="col-md-4 control-label">State</label>
-
-                            <div class="col-md-6">
-                                <select id="state" class="form-control" name="state" value="{{ old('state') }}" required autofocus>
-
-                                <option value="FL"> FL</option>
-
-                                @if ($errors->has('address'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('address') }}</strong>
-                                    </span>
-                                @endif
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group row{{ $errors->has('zip') ? ' has-error' : '' }}">
-                            <label for="zip" class="col-md-4 control-label">Zip Code</label>
-
-                            <div class="col-md-6">
-                                <input id="zip" type="text" class="form-control" name="zip" value="{{ old('zip') }}" required autofocus>
-
-                                @if ($errors->has('zip'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('zip') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        -->
                         <div class="form-group row{{ $errors->has('phone') ? ' has-error' : '' }}">
                             <label for="phone" class="col-md-4 control-label">Phone Number*</label>
 

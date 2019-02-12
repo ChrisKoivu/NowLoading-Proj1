@@ -14,8 +14,6 @@ class AddedUsersTableFields extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('provider');
-            $table->string('provider_id');
             $table->string('street');
             $table->string('street_num');
             $table->string('zip');
@@ -36,7 +34,6 @@ class AddedUsersTableFields extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->json('settings')->nullable();
             $table->dropColumn('street');
             $table->dropColumn('street_num');
             $table->dropColumn('zip');
