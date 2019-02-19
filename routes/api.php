@@ -13,9 +13,32 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('users', 'UserController');
+
+    // return all users
+    Route::get('users', 'UserController@index');
+    
+    // Update user
+    Route::patch('users', 'UserController@store');
 
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+
+    Route::post('register', 'UserController@register');
+    Route::post('login', 'UserController@authenticate');
+   
+
+    Route::group(['middleware' => ['jwt.verify']], function() {
+        Route::get('user', 'UserController@getAuthenticatedUser');
+        // List single user
+        Route::get('users/{id}', 'UserController@show');
+    });
+
+
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+   //return $request->user();
+//});
+
+//Route::group(['middleware' => ['jwt.auth']], function () {
+    //Route::get('user', 'UserController@getAuthenticatedUser');
+    //Route::get('users', 'UserController@index');
+//});
