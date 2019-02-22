@@ -1,0 +1,72 @@
+a.skip {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 1px;
+    width: 1px;
+    text-align: left;
+    overflow: hidden;
+}
+
+a.skip{
+    background-color: #939393;
+  } 
+
+a.skip:active, 
+a.skip:focus, 
+a.skip:hover {
+    left: 0; 
+    top: 0;
+    width: auto; 
+    height: auto; 
+    overflow: visible; 
+    color: black;
+}
+/*This stylesheet hides the skip navigation link until tabbed to
+Also highlights buttons or links when tabbing through page*/
+
+.box {
+    position: relative;
+    width: 100%;
+  }
+  
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .box:hover .image {
+    opacity: 0.3;
+  }
+  
+  .box:hover .middle {
+    opacity: 1;
+  }
+  
+  .text {
+    background-color: #007faa;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+
+  /*when mouse hovers over picture it provides a link to resource page*/
+
+  i.text-primary{
+    color: #007faa !important;
+}
