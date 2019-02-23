@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSurveysTable extends Migration
+class CreateContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,12 @@ class CreateSurveysTable extends Migration
      */
     public function up()
     {
-        Schema::create('surveys', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
-
-            // name of the survey
             $table->string('name');
-
-            // FK to users table. 
-           // $table->integer('user_id')->unsigned();
-            //$table->foreign('user_id')->references('id')->on('users');
-
-     
+            $table->string('email');
+            $table->text('comment');
             $table->timestamps();
-
         });
     }
 
@@ -36,7 +29,6 @@ class CreateSurveysTable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('surveys');
+        Schema::dropIfExists('contacts');
     }
 }
