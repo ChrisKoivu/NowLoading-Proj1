@@ -16,10 +16,9 @@ class CreateSurveyResponseTable extends Migration
         Schema::create('survey_question_responses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('survey_question_response');
-
-             // FK to volunteers table
-            $table->integer('question_response_option_id')->unsigned();
-            $table->foreign('question_response_option_id')->references('id')->on('survey_question_response_options');
+            // FK to survey questions table
+            $table->integer('survey_question_id')->unsigned();
+            $table->foreign('survey_question_id')->references('id')->on('survey_questions');
             $table->timestamps();
         });
     }
