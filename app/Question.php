@@ -21,16 +21,23 @@ class Question extends Model
     /**
      * Get the Answers associated with this Question
      */
-    public function responses()
+    public function response()
     {
-        return $this->hasMany('App\Response');
+        return $this->hasOne('App\Response');
     }
 
     /**
-     * Get the Survey that this Question is associated with.
+     * Get the Surveys that this Question is associated with.
      */
-    public function survey()
+      
+    public function surveys()
     {
-        return $this->belongsToMany('App\Survey');
+        return $this->belongsToMany('App\Question');
     }
+
+    public function choices()
+    {
+        return $this->hasMany('App\Choice');
+    }
+
 }

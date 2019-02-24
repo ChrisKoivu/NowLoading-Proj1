@@ -16,19 +16,12 @@ class Survey extends Model
         return $this->belongsToMany('App\Question');
     }
 
-     /**
-     * Get the user that this Survey is associated with.
+    /**
+     * Get the users associated with this survey.
      */
-    public function user()
+    public function users()
     {
         return $this->belongsToMany('App\User');
     }
 
-    /**
-     * Get the page that this Survey is associated with.
-     */
-    public function page()
-    {
-        return $this->belongsTo('App\Page');
-    }
 }

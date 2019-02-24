@@ -65,19 +65,22 @@ class User extends Authenticatable implements JWTSubject
     /**
      * Get the activity associated with this User 
      */
+
+     // not sure about this part.. thinking of tracking the clicked
+     // links and saving the user id to the track table and removing
+     // this relationship
     public function track()
     {
         return $this->hasMany('App\Track');
     }
 
     /**
-     * Get the activity associated with this User 
+     * Get the surveys for the user.
      */
-    public function survey(){
-    
-        return $this->hasOne('App\Survey');
+    public function surveys()
+    {
+        return $this->belongsToMany('App\Survey');
     }
-
     /**
      * check if user role has permission to perform
      * the requested action. returns true if they

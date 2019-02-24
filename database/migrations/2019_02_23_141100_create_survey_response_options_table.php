@@ -13,12 +13,12 @@ class CreateSurveyResponseOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('survey_question_response_options', function (Blueprint $table) {
+        Schema::create('choices', function (Blueprint $table) {
             $table->increments('id');            
             $table->string('survey_response_option');
             // FK to survey questions table
-            $table->integer('survey_question_id')->unsigned();
-            $table->foreign('survey_question_id')->references('id')->on('survey_questions');
+            $table->integer('question_id')->unsigned();
+            $table->foreign('question_id')->references('id')->on('questions');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateSurveyResponseOptionsTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('survey_response_options');
+        Schema::dropIfExists('choices');
     }
 }

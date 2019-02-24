@@ -13,12 +13,12 @@ class CreateSurveyResponseTable extends Migration
      */
     public function up()
     {
-        Schema::create('survey_question_responses', function (Blueprint $table) {
+        Schema::create('responses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('survey_question_response');
             // FK to survey questions table
-            $table->integer('survey_question_id')->unsigned();
-            $table->foreign('survey_question_id')->references('id')->on('survey_questions');
+            $table->integer('question_id')->unsigned();
+            $table->foreign('question_id')->references('id')->on('questions');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateSurveyResponseTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('survey_response');
+        Schema::dropIfExists('responses');
     }
 }

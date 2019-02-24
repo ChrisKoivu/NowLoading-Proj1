@@ -15,7 +15,7 @@ class CreateSurveyQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('survey_questions', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');            
             $table->string('survey_question');
             // FK to surveys table
@@ -33,6 +33,6 @@ class CreateSurveyQuestionsTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('survey_questions');
+        Schema::dropIfExists('questions');
     }
 }
