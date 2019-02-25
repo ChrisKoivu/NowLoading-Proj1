@@ -15,6 +15,12 @@
               </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{url('/links/create')}}">
+                  <span data-feather="file"></span>
+                    Create Links
+                </a>
+              </li>
+            <li class="nav-item">
               <a class="nav-link" href="#">
                 <span data-feather="shopping-cart"></span>
                 Files
