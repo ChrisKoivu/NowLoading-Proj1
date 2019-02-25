@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Link;
+use App\Track;
+
+use App\Http\Resources\LinkResource as LinkResource;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +18,16 @@ use Illuminate\Http\Request;
 |
 */
 
+    // return all links
+    //Route::get('links', 'LinksController@index');
+    
+    Route::get('/links', function () {
+        return new LinkResource(Link::find(1));
+    });
 
+    Route::post('tracks', 'TrackPageController@store');
+    //Route::post('track', 'TrackPageController@store');    
+    
     // return all users
     Route::get('users', 'UserController@index');
     
@@ -21,11 +35,11 @@ use Illuminate\Http\Request;
     Route::patch('users', 'UserController@store');
 
 
-
+/* 
 
     Route::post('register', 'UserController@register');
     Route::post('login', 'UserController@authenticate');
-   
+ */   
 
     Route::group(['middleware' => ['jwt.verify']], function() {
         Route::get('user', 'UserController@getAuthenticatedUser');
@@ -33,12 +47,3 @@ use Illuminate\Http\Request;
         Route::get('users/{id}', 'UserController@show');
     });
 
-
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-   //return $request->user();
-//});
-
-//Route::group(['middleware' => ['jwt.auth']], function () {
-    //Route::get('user', 'UserController@getAuthenticatedUser');
-    //Route::get('users', 'UserController@index');
-//});
