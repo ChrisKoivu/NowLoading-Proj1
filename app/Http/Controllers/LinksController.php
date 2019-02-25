@@ -69,7 +69,7 @@ class LinksController extends Controller
                 $link->save();
                 return back()->with('success', 'Your link has been added'); 
             }  else {
-                return back()->with('success', 'Your link has already been added'); 
+                return back()->with('duplicate', 'Your link has already been added'); 
             }        
         }
     }

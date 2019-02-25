@@ -9,6 +9,11 @@
                  <p>{{ \Session::get('success') }}</p>
               </div><br />
             @endif
+            @if (\Session::has('duplicate'))
+              <div class="alert alert-danger" role="alert">
+                <p>{{ \Session::get('duplicate') }}</p>
+              </div><br />
+            @endif            
             <form method="POST" action="{{url('/links')}}">
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
