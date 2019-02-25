@@ -9,9 +9,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('pages')}}">
+              <a class="nav-link" href="{{url('links')}}">
                 <span data-feather="file"></span>
-                Pages
+                Links
               </a>
             </li>
             <li class="nav-item">

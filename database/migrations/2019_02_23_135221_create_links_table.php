@@ -19,8 +19,7 @@ class CreateLinksTable extends Migration
             $table->string('description');
             $table->string('category');
             $table->string('url');
-            $table->string('type');
-            $table->string('thumbnail');
+            $table->string('thumbnail')->nullable();
             $table->timestamps();
         });
     }

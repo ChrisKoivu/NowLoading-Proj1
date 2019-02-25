@@ -23,6 +23,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/links', 'LinksController@index')->name('links');
 
+Route::get('/links/create', 'LinksController@create');
+
+Route::post('/links', 'LinksController@store');
+
 
 Route::resource('roles','RolesController');
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Link;
+use Validator;
 use App\Http\Resources\LinkResource as LinkResource;
 
 
@@ -34,7 +35,8 @@ class LinksController extends Controller
      */
     public function create()
     {
-        //
+        return view('link.create');
+
     }
 
     /**
@@ -45,7 +47,31 @@ class LinksController extends Controller
      */
     public function store(Request $request)
     {
-        
+        // validate input
+        $v = Validator::make($request->all(), [     
+            'title' => 'required',
+            'description' => 'required',
+            'url' => 'required',
+            'category' => 'required',
+
+        ]);
+
+        if ($v->fails()){            
+            return back()->withErrors($v);
+        }else{
+            $link = Link::where('url', $request->input('url'))->first();
+            if(!$link){
+                $link = new Link;
+                $link->title=$request->input('title');
+                $link->description=$request->input('description');
+                $link->url=$request->input('url');            
+                $link->category=$request->input('category'); 
+                $link->save();
+                return back()->with('success', 'Your link has been added'); 
+            }  else {
+                return back()->with('success', 'Your link has already been added'); 
+            }        
+        }
     }
 
     /**
