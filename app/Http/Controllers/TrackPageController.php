@@ -10,6 +10,8 @@ use App\Http\Resources\TrackResource as TrackResource;
 
 class TrackPageController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -36,21 +38,17 @@ class TrackPageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-
-       
+    {      
         if ($request->isMethod('post')) {
-            $id =Auth::id();
-            $track = new Track();
-            $track->link_id = $request->input('link_id');
-
-
-            $track->user_id = $request->input('user_id');
-            if($track->save()) {
-                return new TrackResource($track);
-            }
-        }
-        
+            
+                $track = new Track();
+                $track->link_id = $request->input('link_id');
+                $track->user_id = $request->input('user_id');
+                if($track->save()) {
+                    return new TrackResource($track);
+                }
+            
+        }       
     }
 
     /**

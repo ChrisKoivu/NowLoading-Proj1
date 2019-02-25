@@ -35,7 +35,6 @@
 
 </head>
 <body style="overflow:hidden">
-    {{ Auth::user()->id }}
           <button class="btn btn-link" type="button" data-toggle="collapse" 
          data-target="#link" aria-expanded="true" 
          aria-controls="link">
