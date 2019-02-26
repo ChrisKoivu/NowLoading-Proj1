@@ -27,6 +27,8 @@ Route::get('/links/create', 'LinksController@create');
 
 Route::get('/links/visited', 'LinksController@getVisitedLinks');
 
+Route::get('/links/{category}', 'LinksController@getLinksByCategory');
+
 
 Route::post('/links', 'LinksController@store');
 

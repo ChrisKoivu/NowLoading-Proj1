@@ -128,7 +128,7 @@ class LinksController extends Controller
 
 
     public function getLinksByCategory($category){
-        $links = DB::table('links')->where('category', $category)->get();
+        $links = Link::where('category', $category)->get();
         return view('link.new', compact('links'));
     }
 
