@@ -38,9 +38,9 @@
                    {{--  <h4 class="section-heading">E-Commerce</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>--}}
                 </div> 
-                <div class="col-md-4"><span class="fa-stack fa-4x"><a href="https://makingstridesforautism.org/index.html" target="_blank"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-child fa-stack-1x fa-inverse"></i></a></span>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-child fa-stack-1x fa-inverse"></i></a></span>
                     <h4 class="section-heading">MS4A Main Site</h4>
-                    <p class="text-muted">Visit us on our main site here!</p>
+                    <p class="text-muted"><a href="https://makingstridesforautism.org/index.html" class="brightness" target="_blank">Visit us on our main site here!</a>
                 </div>
                 <div class="col-md-4"><span class="fa-stack fa-4x">{{-- <i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-lock fa-stack-1x fa-inverse"></i></span>
                     <h4 class="section-heading">Web Security</h4>
@@ -56,11 +56,11 @@
                     <h2 class="text-uppercase section-heading ">Resources</h2><br>
                 </div>
             </div>
-            <div class="row">
+            <div class="row ">
                 <div class="col-sm-6 col-md-4 portfolio-item">
                 <div class="text-center"><h4>Education</h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%"></a>
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -74,7 +74,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="text-center"><h4>Business</h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%"></a>
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -88,7 +88,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="text-center"><h4>Medical</h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%"></a>
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -104,7 +104,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="text-center"><h4>Family</h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%"></a>
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -118,7 +118,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="text-center"><h4>Government</h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%"></a>
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -132,7 +132,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="text-center"><h4>Community</h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%"></a>
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -149,7 +149,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="text-center"><h4>Travel</h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%"></a>
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
                         <div class="middle">
                             <div class="text">
                                 <p>

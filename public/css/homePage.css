@@ -1,4 +1,4 @@
-a.skip {
+.skip {
     position: absolute;
     top: -1000px;
     left: -1000px;
@@ -9,7 +9,7 @@ a.skip {
 }
 
 a.skip{
-    background-color: #939393;
+    background-color: #007faa;
   } 
 
 a.skip:active, 
@@ -20,7 +20,14 @@ a.skip:hover {
     width: auto; 
     height: auto; 
     overflow: visible; 
-    color: black;
+    color: white;
+}
+
+.brightness:active,
+.brightness:focus,
+.brightness:hover {
+    background-color: #007faa;
+    color: white;
 }
 /*This stylesheet hides the skip navigation link until tabbed to
 Also highlights buttons or links when tabbing through page*/
@@ -70,3 +77,4 @@ Also highlights buttons or links when tabbing through page*/
   i.text-primary{
     color: #007faa !important;
 }
+/********************************************/
