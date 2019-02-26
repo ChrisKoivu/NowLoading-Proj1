@@ -66,7 +66,7 @@
                                 <p>
                                     Description
                                 </p>
-                                <a href="{{route('EducationPage')}}" class="btn btn-info" style="color:white">View</a>
+                                <a href="{{url('/links/Education')}}" class="btn btn-info" style="color:white">View</a>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                                 <p>
                                     Description
                                 </p>
-                                <a href="{{route('BusinessPage')}}" class="btn btn-info" style="color:white">View</a>
+                                <a href="{{url('/links/Business')}}" class="btn btn-info" style="color:white">View</a>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                                 <p>
                                      Description
                                 </p>
-                                <a href="{{route('MedicalPage')}}" class="btn btn-info" style="color:white">View</a>
+                                <a href="{{url('/links/Medical')}}" class="btn btn-info" style="color:white">View</a>
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                                 <p>
                                     Description
                                 </p>
-                                <a href="{{route('FamilyPage')}}" class="btn btn-info" style="color:white">View</a>
+                                <a href="{{url('/links/Family')}}" class="btn btn-info" style="color:white">View</a>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
                                 <p>
                                     Description
                                 </p>
-                                <a href="{{route('GovernmentPage')}}" class="btn btn-info" style="color:white">View</a>
+                                <a href="{{url('/links/Government')}}" class="btn btn-info" style="color:white">View</a>
                             </div>
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                                 <p>
                                     Description
                                 </p>
-                                <a href="{{route('CommunityPage')}}" class="btn btn-info" style="color:white">View</a>
+                                <a href="{{url('/links/Community')}}" class="btn btn-info" style="color:white">View</a>
                             </div>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
                                 <p>
                                     Description
                                 </p>
-                                <a href="{{route('TravelPage')}}" class="btn btn-info" style="color:white">View</a>
+                                <a href="{{url('/links/Travel')}}" class="btn btn-info" style="color:white">View</a>
                             </div>
                        </div>
                     </div>
