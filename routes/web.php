@@ -14,7 +14,7 @@
 
 Auth::routes();
 
-
+Route::get('/pages/edit', 'UserController@edit')->name('edit');
 
 
 Route::get('/', 'HomeController@index')->name('home');

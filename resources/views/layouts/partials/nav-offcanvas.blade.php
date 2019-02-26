@@ -16,7 +16,7 @@
              <a class="nav-link" href="/home" >Home</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
+              <a class="nav-link" href="/pages/edit">Profile</a>
            </li>
         <!-- Authentication Links -->
         @guest

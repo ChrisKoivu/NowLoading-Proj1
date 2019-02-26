@@ -20,6 +20,15 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    protected function authenticated($user)
+    {
+    if ( $user->survey_complete == 0 ) 
+    {
+        return redirect('/survey/survey');
+    }
+    
+    return redirect('/home');
+    }
     /**
      * Where to redirect users after login.
      *
