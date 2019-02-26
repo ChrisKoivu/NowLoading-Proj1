@@ -13,8 +13,32 @@
      <!-- include the navbar -->
      @include('layouts.partials.nav-offcanvas')
 
+     <style>
+       table{
+         margin-top:150px;
+         margin-left:auto;
+         margin-right: auto;
+       }
+
+       td, th {
+         padding:20px;
+       }
+
+       h3{
+         margin-top:150px;
+         margin-left:60px;
+       }
+       p{
+         margin-left: 60px;
+       }
+
+    </style>
+
 </head>
 <body>
+
+    <h3>Visited Links</h3>
+    <p>These are the links visited by the users</p>
          <!-- display table listing the visited links -->
                   <?php if(!empty($links)){ ?>
                     <table>

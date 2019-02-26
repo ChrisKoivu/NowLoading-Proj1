@@ -19,6 +19,12 @@
                   <span data-feather="file"></span>
                     Create Links
                 </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/links/visited')}}">
+                  <span data-feather="file"></span>
+                    Visited Links
+                </a>
               </li>
             <li class="nav-item">
               <a class="nav-link" href="#">

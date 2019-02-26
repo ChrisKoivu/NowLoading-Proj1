@@ -25,6 +25,9 @@ Route::get('/links', 'LinksController@index')->name('links');
 
 Route::get('/links/create', 'LinksController@create');
 
+Route::get('/links/visited', 'LinksController@getVisitedLinks');
+
+
 Route::post('/links', 'LinksController@store');
 
 

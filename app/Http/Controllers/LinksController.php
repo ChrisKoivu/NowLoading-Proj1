@@ -6,7 +6,7 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Resources\LinkResource as LinkResource;
-
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
