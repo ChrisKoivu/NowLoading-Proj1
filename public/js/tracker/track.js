@@ -1,6 +1,6 @@
 
 
-function trackLink2(userId, linkId){    
+function trackLink(userId, linkId){   
   console.log(userId);
     axios.post('/api/tracks/?link_id=' + linkId + '&user_id=' + userId)
     .then((response)=>{

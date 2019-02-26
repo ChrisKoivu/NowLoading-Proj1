@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Link;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Resources\LinkResource as LinkResource;
 
@@ -23,7 +25,7 @@ class LinksController extends Controller
      */
     public function index()
     {
-         /* get posts for any auth user */
+         /* get all links */
         $links = Link::all()->toArray();        
         return view('link.new', compact('links'));    
     }
@@ -56,33 +58,38 @@ class LinksController extends Controller
 
         ]);
 
-        if ($v->fails()){            
-            return back()->withErrors($v);
+        $user = Auth::user();
+        if($user->permission('canCreateContent')){
+            if ($v->fails()){            
+                return back()->withErrors($v);
+            }else{
+                $link = Link::where('url', $request->input('url'))->first();
+                if(!$link){
+                    $link = new Link;
+                    $link->title=$request->input('title');
+                    $link->description=$request->input('description');
+                    $link->url=$request->input('url');            
+                    $link->category=$request->input('category'); 
+                    $link->save();
+                    return back()->with('success', 'Your link has been added'); 
+                }  else {
+                    return back()->with('duplicate', 'Your link has already been added'); 
+                }        
+            }
         }else{
-            $link = Link::where('url', $request->input('url'))->first();
-            if(!$link){
-                $link = new Link;
-                $link->title=$request->input('title');
-                $link->description=$request->input('description');
-                $link->url=$request->input('url');            
-                $link->category=$request->input('category'); 
-                $link->save();
-                return back()->with('success', 'Your link has been added'); 
-            }  else {
-                return back()->with('duplicate', 'Your link has already been added'); 
-            }        
+            return back()->with('duplicate', 'Your are not permitted to create new content'); 
         }
-    }
+    } // end of store method
 
     /**
-     * Display the specified resource.
+     * Display all links for selected category.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($category)
     {
-        //
+        $this->getLinksByCategory($category);
     }
 
     /**
@@ -117,5 +124,19 @@ class LinksController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function getLinksByCategory($category){
+        $links = DB::table('links')->where('category', $category)->get();
+        return view('link.new', compact('links'));
+    }
+
+    public function getVisitedLinks(){
+        $links = DB::table('links')
+        ->join('tracks', 'links.id', '=', 'tracks.link_id')
+        ->join('users', 'tracks.user_id', '=', 'users.id')
+        ->select('users.name', 'links.url','tracks.created_at')->get();
+        return view('link.visited', compact('links'));
     }
 }

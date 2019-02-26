@@ -46,10 +46,13 @@
                 <div class="form-group">
                     <label for="category">Select category:</label>
                     <select class="form-control" id="category" name="category">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
+                      <option>Business</option>
+                      <option>Community</option>
+                      <option>Education</option>
+                      <option>Entertainment</option>
+                      <option>Government</option>
+                      <option>Medical</option>
+                      <option>Travel</option>
                     </select>
                   </div>
                   

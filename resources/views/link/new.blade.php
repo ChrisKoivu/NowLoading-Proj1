@@ -45,12 +45,11 @@
                         @foreach($links as $link)       
                             <p id="link">               
                               <a href="{{$link['url']}}" 
-                              onclick="trackLink2({{Auth::user()->id}}, {{$link['id']}} )"
+                              onclick="trackLink({{Auth::user()->id}}, {{$link['id']}} )"
                                target="myFrame">
                                {{$link['title']}}
                               </a>
                             </p>
-                            <hr>
                           @endforeach
                     <?php } ?>
     <iframe  src="" name="myFrame" ></iframe>
