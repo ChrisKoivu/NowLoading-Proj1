@@ -64,15 +64,11 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /**
-     * Get the activity associated with this User 
+     * Get the demographic associated with this User 
      */
-
-     // not sure about this part.. thinking of tracking the clicked
-     // links and saving the user id to the track table and removing
-     // this relationship
-    public function track()
+    public function demographic()
     {
-        return $this->hasMany('App\Track');
+        return $this->hasOne('App\Demographic');
     }
 
     /**

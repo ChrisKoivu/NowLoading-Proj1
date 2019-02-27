@@ -26,11 +26,7 @@
           <!-- if admin role, generate dashboard link -->
           <?php
             if(auth()->user()->isAdmin()){
-            echo '
-            <li class="nav-item">  
-              <a class="nav-link" href="/admin" >Dashboard</a>
-            </li>
-            ';
+            echo '<li class="nav-item"><a class="nav-link" href="/admin" >Dashboard</a></li>';
             }
           ?>
       
