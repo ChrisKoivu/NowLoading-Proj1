@@ -27,8 +27,7 @@
           <?php
             if(auth()->user()->isAdmin()){
             echo '<li class="nav-item"><a class="nav-link" href="/admin" >Dashboard</a></li>';
-            }
-          ?>
+           } ?>
       
          <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
