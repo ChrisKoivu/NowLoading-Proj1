@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\User;
+use App\Demographic;
 
 class ProfileController extends Controller
 {
@@ -17,7 +20,7 @@ class ProfileController extends Controller
          // create a volunteers object with the fields we need
 	    $users = DB::table('users')
         ->join('demographics','demographics.user_id','=','users.id')
-        ->select('users.*', 'demographics.*')->get();
+        ->select('users.*', 'demographics.*')->where('id', Auth::id())->first();
         return view('profile.index', compact('users'));
     }
 
