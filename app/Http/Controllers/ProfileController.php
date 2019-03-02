@@ -18,10 +18,10 @@ class ProfileController extends Controller
     {
         //join user and demographic tables
          // create a volunteers object with the fields we need
-	    $users = DB::table('users')
+	    $user = DB::table('users')
         ->join('demographics','demographics.user_id','=','users.id')
-        ->select('users.*', 'demographics.*')->where('id', Auth::id())->first();
-        return view('profile.index', compact('users'));
+        ->select('users.*', 'demographics.*')->where('users.id', Auth::id())->first();
+        return view('profile.index', compact('user'));
     }
 
     /**

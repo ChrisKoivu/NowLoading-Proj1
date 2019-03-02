@@ -20,6 +20,9 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/profile', 'ProfileController@index');
+
+
 Route::get('/links', 'LinksController@index')->name('links');
 
 Route::get('/links/create', 'LinksController@create');
