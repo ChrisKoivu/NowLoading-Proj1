@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Demographic;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -27,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/resourcedir';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -51,6 +52,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            // fields for demographic table
             'city' => 'string',
             'street' => 'string',
             'street_num' => 'string',
@@ -71,24 +73,26 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {           
-
         $role =($data['email']===config('app.admin_email')) ? 
           User::ADMIN_ROLE : User::DEFAULT_ROLE;
 
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'role' => $role,
-            'city' => $data['city'],
-            'street' => $data['street'],
-            'street_num' => $data['street_num'],
-            'zip' => $data['zip'],
-            'city' => $data['city'],
-            'phone' => $data['phone'],
-            'state' => $data['state'],
-            'country' => $data['country'],
-            'profession' => $data['profession'],
-        ]);
+            $user = new User;
+            $user->name = $data['name'];
+            $user->email = $data['email'];
+            $user->password = bcrypt($data['password']);
+            $user->role = $role;
+            $user->save();
+            $demographic = new Demographic;
+            $demographic->street_num = $data['street_num'];
+            $demographic->street = $data['street'];
+            $demographic->city = $data['city'];
+            $demographic->state = $data['state'];
+            $demographic->zip = $data['zip'];
+            $demographic->phone = $data['phone'];
+            $demographic->country = $data['country'];
+            $demographic->profession = $data['profession'];
+            $user->demographic()->save($demographic);           
+            return $user;
+       
     }
 }
