@@ -15,7 +15,7 @@ class CreateSurveyResponseOptionsTable extends Migration
     {
         Schema::create('choices', function (Blueprint $table) {
             $table->increments('id');            
-            $table->string('survey_response_option');
+            $table->string('response_choice');
             // FK to survey questions table
             $table->integer('question_id')->unsigned();
             $table->foreign('question_id')->references('id')->on('questions');

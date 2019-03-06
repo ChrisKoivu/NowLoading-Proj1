@@ -18,9 +18,6 @@ class CreateSurveyQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');            
             $table->string('survey_question');
-            // FK to surveys table
-            $table->integer('survey_id')->unsigned();
-            $table->foreign('survey_id')->references('id')->on('surveys');
             $table->timestamps();
         });
     }

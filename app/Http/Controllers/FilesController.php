@@ -49,7 +49,7 @@ class FilesController extends Controller
 
         if($request->file('document')){
             $fileName = time().'.'.$request->file('document')->getClientOriginalExtension();
-            //move image to public images folder
+            //move document to public document folder
             $request->file('document')->move(public_path('documents'), $fileName);
             return back()->with('success', 'Your document has been uploaded');
         }
