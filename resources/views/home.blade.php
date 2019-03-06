@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
-
-<body id="page-top">
+<html lang="en-US" xml:lang="en-US">
+<body id="page-top" alt="City Background" class="bg">
     <section id="services">
         <div class="container">
             <div class="row">
@@ -39,7 +39,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                 <div class="text-center"><h4><a href="{{url('/links/Education')}}" class="highlight disabled">Education</a></h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Education Resources">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -53,7 +53,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="text-center"><h4><a href="{{url('/links/Business')}}" class="highlight disabled">Business</a></h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Business Resources">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -67,7 +67,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="text-center"><h4><a href="{{url('/links/Medical')}}" class="highlight disabled">Medical</a></h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100">
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100" alt="Medical Resources">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -83,7 +83,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="text-center"><h4><a href="{{url('/links/Family')}}" class="highlight disabled">Family</a></h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Family Resources">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -97,7 +97,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="text-center"><h4><a href="{{url('/links/Government')}}" class="highlight disabled">Government</a></h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Government Resouces">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -111,7 +111,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="text-center"><h4><a href="{{url('/links/Community')}}" class="highlight disabled">Community</a></h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Community Resources">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -127,7 +127,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="text-center"><h4><a href="{{url('/links/Entertainment')}}" class="highlight disabled">Entertainment</a></h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Entertainment Resources">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -141,7 +141,7 @@
                 <div class="col-sm-6 col-md-4 portfolio-item">
                     <div class="text-center"><h4><a href="{{url('/links/Travel')}}" class="highlight disabled">Travel</a></h4></div>
                     <div class="box">
-                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
+                        <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Travel Resources">
                         <div class="middle">
                             <div class="text">
                                 <p>
@@ -172,8 +172,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
-                        <li class="list-inline-item"><a href="https://twitter.com/makingstridesnf" class="highlight amplify" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.facebook.com/makingstridesforautism/" class="highlight amplify" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/makingstridesnf" class="highlight amplify" target="_blank"><i class="fa fa-twitter" alt="Twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.facebook.com/makingstridesforautism/" class="highlight amplify" target="_blank"><i class="fa fa-facebook" alt="Facebook"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
@@ -188,5 +188,6 @@
         </div>
     </footer>
 </body>
+</html>
 
 @endsection

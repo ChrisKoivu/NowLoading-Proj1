@@ -18,7 +18,7 @@ a:active {
 }
 
 a.skip{
-    background-color: #007faa;
+    background-color: #1978d4;
   } 
 
 a.skip:active, 
@@ -33,7 +33,7 @@ a.skip:focus {
 /*hides the skip nav link and changes background and font color when focused*/
 
 .highlight:focus {
-    background-color: #007faa;
+    background-color: #1978d4;
     color:white;
 }
 /*highlights any buttons or links when focused or hovered*/
@@ -84,7 +84,7 @@ a.skip:focus {
   }
   
   .text {
-    background-color: #007faa;
+    background-color: #1978d4;
     color: white;
     font-size: 16px;
     padding: 16px 32px;
@@ -93,7 +93,7 @@ a.skip:focus {
   /*when mouse hovers over picture it provides a description after fading out the image hovered to resource page*/
 
   i.text-primary{
-    color: #007faa !important;
+    color: #1978d4 !important;
 }
 /*changes color of the "i" images of bootstrap*/
 
@@ -103,4 +103,17 @@ a.skip:focus {
   color:black;
   text-decoration: none;
 }
-/*disables a link when cursor scrolls over it*/
+/*disables a link completely for curso accessibility*/
+
+.bg {
+    /* The image used */
+    background-image: url("");
+
+  /* Full height */
+   height: 100%; 
+
+  /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+    background-size: cover;
+}
