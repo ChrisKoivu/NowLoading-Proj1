@@ -46,7 +46,7 @@ a.skip:focus {
     -moz-transition: font-size .5s ease;
     -o-transition: font-size .5s ease;
     transition: font-size .5s ease;
-    font-size:2em;
+    font-size:1.7em;
 }
 /*amplifies any font that is focused or hovered*/
 

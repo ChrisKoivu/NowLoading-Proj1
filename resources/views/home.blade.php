@@ -45,6 +45,7 @@
                                 <p>
                                     Description
                                 </p>
+                                <a href="{{url('/links/Education')}}" class="btn btn-info" tabindex="-1">View</a>
                             </div>
                         </div>
                     </div>
@@ -58,7 +59,7 @@
                                 <p>
                                     Description
                                 </p>
-                                
+                                <a href="{{url('/links/Business')}}" class="btn btn-info" tabindex="-1">View</a>
                             </div>
                         </div>
                     </div>
@@ -72,6 +73,7 @@
                                 <p>
                                      Description
                                 </p>
+                                <a href="{{url('/links/Medical')}}" class="btn btn-info" tabindex="-1">View</a>
                             </div>
                         </div>
                     </div>
@@ -87,7 +89,7 @@
                                 <p>
                                     Description
                                 </p>
-                                
+                                <a href="{{url('/links/Family')}}" class="btn btn-info" tabindex="-1">View</a>
                             </div>
                         </div>
                     </div>
@@ -101,6 +103,7 @@
                                 <p>
                                     Description
                                 </p>
+                                <a href="{{url('/links/Government')}}" class="btn btn-info" tabindex="-1">View</a>
                             </div>
                         </div>
                     </div>
@@ -114,6 +117,7 @@
                                 <p>
                                     Description
                                 </p>
+                                <a href="{{url('/links/Community')}}" class="btn btn-info" tabindex="-1">View</a>
                             </div>
                         </div>
                     </div>
@@ -128,7 +132,8 @@
                             <div class="text">
                                 <p>
                                     Description
-                                </p> 
+                                </p>
+                                <a href="{{url('/links/Entertainment')}}" class="btn btn-info" tabindex="-1">View</a> 
                             </div>
                        </div>
                     </div>
@@ -142,6 +147,7 @@
                                 <p>
                                     Description
                                 </p> 
+                                <a href="{{url('/links/Travel')}}" class="btn btn-info" tabindex="-1">View</a>
                             </div>
                        </div>
                     </div>
