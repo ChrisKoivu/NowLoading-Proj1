@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Making Strides for Autism') }}</title>
 
     <!-- Styles -->
+    <link rel="stylesheet" href= "{{asset('css/homePage.css')}}">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
     <link href="{{ asset('css/offcanvas.css') }}" rel="stylesheet">

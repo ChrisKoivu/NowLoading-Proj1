@@ -1,3 +1,12 @@
+a:focus,
+a:hover,
+a:link,
+a:visited
+a:active {
+  text-decoration: none !important;
+}
+/*removes the underline from the links*/
+
 .skip {
     position: absolute;
     top: -1000px;
@@ -13,24 +22,33 @@ a.skip{
   } 
 
 a.skip:active, 
-a.skip:focus, 
-a.skip:hover {
+a.skip:focus {
     left: 0; 
     top: 0;
     width: auto; 
     height: auto; 
     overflow: visible; 
-    color: white;
+    color: white;   
 }
+/*hides the skip nav link and changes background and font color when focused*/
 
-.brightness:active,
-.brightness:focus,
-.brightness:hover {
+.highlight:focus {
     background-color: #007faa;
-    color: white;
+    color:white;
 }
-/*This stylesheet hides the skip navigation link until tabbed to
-Also highlights buttons or links when tabbing through page*/
+/*highlights any buttons or links when focused or hovered*/
+
+.amplify:focus {
+    font-size: 1em;
+    margin: 0;
+    text-align: center;
+    -webkit-transition: font-size .5s ease;
+    -moz-transition: font-size .5s ease;
+    -o-transition: font-size .5s ease;
+    transition: font-size .5s ease;
+    font-size:2em;
+}
+/*amplifies any font that is focused or hovered*/
 
 .box {
     position: relative;
@@ -72,9 +90,9 @@ Also highlights buttons or links when tabbing through page*/
     padding: 16px 32px;
   }
 
-  /*when mouse hovers over picture it provides a link to resource page*/
+  /*when mouse hovers over picture it provides a description after fading out the image hovered to resource page*/
 
   i.text-primary{
     color: #007faa !important;
 }
-/********************************************/
+/*changes color of the "i" images of bootstrap*/
