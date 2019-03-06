@@ -37,7 +37,7 @@
             </div>
             <div class="row ">
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                <div class="text-center"><h4><a href="{{url('/links/Education')}}" class="highlight">Education</a></h4></div>
+                <div class="text-center"><h4><a href="{{url('/links/Education')}}" class="highlight disabled">Education</a></h4></div>
                     <div class="box">
                         <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
                         <div class="middle">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="{{url('/links/Business')}}" class="highlight">Business</a></h4></div>
+                    <div class="text-center"><h4><a href="{{url('/links/Business')}}" class="highlight disabled">Business</a></h4></div>
                     <div class="box">
                         <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
                         <div class="middle">
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="{{url('/links/Medical')}}" class="highlight">Medical</a></h4></div>
+                    <div class="text-center"><h4><a href="{{url('/links/Medical')}}" class="highlight disabled">Medical</a></h4></div>
                     <div class="box">
                         <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100">
                         <div class="middle">
@@ -81,7 +81,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="{{url('/links/Family')}}" class="highlight">Family</a></h4></div>
+                    <div class="text-center"><h4><a href="{{url('/links/Family')}}" class="highlight disabled">Family</a></h4></div>
                     <div class="box">
                         <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
                         <div class="middle">
@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="{{url('/links/Government')}}" class="highlight">Government</a></h4></div>
+                    <div class="text-center"><h4><a href="{{url('/links/Government')}}" class="highlight disabled">Government</a></h4></div>
                     <div class="box">
                         <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
                         <div class="middle">
@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="{{url('/links/Community')}}" class="highlight">Community</a></h4></div>
+                    <div class="text-center"><h4><a href="{{url('/links/Community')}}" class="highlight disabled">Community</a></h4></div>
                     <div class="box">
                         <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
                         <div class="middle">
@@ -125,7 +125,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="{{url('/links/Entertainment')}}" class="highlight">Entertainment</a></h4></div>
+                    <div class="text-center"><h4><a href="{{url('/links/Entertainment')}}" class="highlight disabled">Entertainment</a></h4></div>
                     <div class="box">
                         <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
                         <div class="middle">
@@ -139,7 +139,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="{{url('/links/Travel')}}" class="highlight">Travel</a></h4></div>
+                    <div class="text-center"><h4><a href="{{url('/links/Travel')}}" class="highlight disabled">Travel</a></h4></div>
                     <div class="box">
                         <img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%">
                         <div class="middle">
