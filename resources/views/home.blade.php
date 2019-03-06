@@ -29,7 +29,7 @@
         </div>
     </section>
     <section id="resourceDir" class="bg-light">
-        <div id="resourceTopics" class="container" tabindex="-1">
+        <div id="resourceTopics" class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="text-uppercase section-heading ">Resources</h2><br>
