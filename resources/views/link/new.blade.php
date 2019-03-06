@@ -21,10 +21,12 @@
             margin-top:60px;
         }
    
-        p{
-            margin-left:25px;
+       td{
+         padding:10px;
+       }
+        table{
+          margin-left:50px;
         }
-      
     
  
      </style>
@@ -33,6 +35,7 @@
      @include('layouts.partials.nav-offcanvas')
 
 </head>
+
 <body style="overflow:hidden">
           <button class="btn btn-link" type="button" data-toggle="collapse" 
          data-target="#link" aria-expanded="true" 
@@ -41,15 +44,29 @@
               </button>
          
                   <?php if(!empty($links)){ ?>
-                        @foreach($links as $link)       
-                            <p id="link">               
+                        <table>
+                        @foreach($links as $link)     
+                           <tr>                           
+                            <td id="link">
                               <a href="{{$link['url']}}" 
                               onclick="trackLink({{Auth::user()->id}}, {{$link['id']}} )"
                                target="myFrame">
                                {{$link['title']}}
                               </a>
-                            </p>
+                            </td>
+                            @if($link['thumbnail'])
+                             <td id="link">
+                                <a href="{{$link['url']}}" 
+                                onclick="trackLink({{Auth::user()->id}}, {{$link['id']}} )"
+                                 target="myFrame">
+                                <img src="{{asset('/images/'. $link['thumbnail'])}}" alt="{{ $link['thumbnail']}}" 
+                                height="42" width="42">
+                                </a>
+                             </td>
+                            @endif
+                          </tr>
                           @endforeach
+                          </table>
                     <?php } ?>
     <iframe  src="" name="myFrame" ></iframe>
 

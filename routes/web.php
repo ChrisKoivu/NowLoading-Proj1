@@ -22,6 +22,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'ProfileController@index');
 
+Route::get('/files', 'FilesController@index');
+
+
+Route::get('/files/upload', 'FilesController@upload');
+
+Route::post('/files/store', 'FilesController@store');
+
 
 Route::get('/links', 'LinksController@index')->name('links');
 
