@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Question;
+use Illuminate\Support\Facades\Auth;
 use App\Survey;
 
 
@@ -19,7 +19,8 @@ class SurveysController extends Controller
         // we are pulling only the first survey,
         // as this is the only one we have created at
         // this time.
-        $survey = Survey::find(1);
+        $survey_id = $this->getSurveyId();
+        $survey = Survey::find($survey_id);
         // we are getting all the questions with their associated
         // response options
         $questions = $survey->questions()->with('responses')->get();
@@ -90,5 +91,29 @@ class SurveysController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * get the survey id number for the profession of
+     * the registered user, setting to survey 1 for now
+     */
+    private function getSurveyId(){
+        $profession = Auth::user()->demographic->profession;
+
+        // this is going to always return the first survey
+        // until we add the additional surveys
+        switch ($profession) {
+            case 'CG':
+                return 1;
+            case 'AA':
+                return 1; // should be 2
+            case 'Emp':
+               return 1;  // should be 3
+            case 'Prof':
+               return 1;  // should be 4
+            case 'Com':
+               return 1;  // should be 5
+        }
+        return 1;
     }
 }
