@@ -20,6 +20,12 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/survey', 'SurveysController@index')->name('survey');
 
+Route::post('/survey', 'SurveysController@store');
+
+
+Route::get('/survey/show', 'SurveysController@show');
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'ProfileController@index');
