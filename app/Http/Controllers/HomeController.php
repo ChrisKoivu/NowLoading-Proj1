@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        $survey_complete = Auth::user()->survey_complete;
+        if(!$survey_complete){
+            return redirect()->route('survey');
+        }
         return view('home');
     }
 }
