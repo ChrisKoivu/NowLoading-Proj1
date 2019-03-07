@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Question;
+use App\Survey;
+
 
 class SurveysController extends Controller
 {
@@ -13,7 +16,14 @@ class SurveysController extends Controller
      */
     public function index()
     {
-        //
+        // we are pulling only the first survey,
+        // as this is the only one we have created at
+        // this time.
+        $survey = Survey::find(1);
+        // we are getting all the questions with their associated
+        // response options
+        $questions = $survey->questions()->with('responses')->get();
+        return view('survey.index', compact('questions'));    
     }
 
     /**

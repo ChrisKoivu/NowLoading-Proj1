@@ -1,0 +1,3 @@
+SELECT questions.id, questions.survey_question, responses.survey_question_response 
+from responses
+INNER JOIN questions on responses.question_id = questions.id;
