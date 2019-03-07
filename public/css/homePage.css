@@ -88,6 +88,7 @@ a.skip:focus {
     color: white;
     font-size: 16px;
     padding: 16px 32px;
+    border-radius: 50%;
   }
 
   /*when mouse hovers over picture it provides a description after fading out the image hovered to resource page*/
