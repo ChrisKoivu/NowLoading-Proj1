@@ -130,5 +130,12 @@ class ResponsesTableSeeder extends Seeder
             'created_at' => NULL,
             'updated_at' => NULL,
         ]);
+
+        DB::table('responses')->insert([
+            'survey_question_response' => 'Not applicable',
+            'question_id' =>4,
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
     }
 }
