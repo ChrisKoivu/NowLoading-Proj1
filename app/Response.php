@@ -16,9 +16,9 @@ class Response extends Model
         return $this->belongsTo('App\Question');
     }
 
-    public function user()
+    public function choice()
     {
-        return $this->belongsTo('App\User');
+        return $this->hasOne('App\Choice');
     }
 
     public function survey()

@@ -27,12 +27,19 @@
                 </a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="{{url('/files')}}">
                 <span data-feather="shopping-cart"></span>
-                Files
+                View Files
               </a>
             </li>
             
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/files/upload')}}">
+                  <span data-feather="shopping-cart"></span>
+                  Upload Files
+                </a>
+              </li>
+              
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <span data-feather="bar-chart-2"></span>

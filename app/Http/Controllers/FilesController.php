@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FilesController extends Controller
 {
@@ -13,7 +14,11 @@ class FilesController extends Controller
      */
     public function index()
     {
-        //
+
+        $images = \File::allFiles(public_path('images'));
+        $documents = \File::allFiles(public_path('documents'));
+        return view('files.index', compact('images', 'documents'));
+
     }
 
     /**
@@ -21,9 +26,10 @@ class FilesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function upload()
     {
-        //
+        return view('files.upload');
+
     }
 
     /**
@@ -34,7 +40,19 @@ class FilesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->file('photo')){
+            $fileName = time().'.'.$request->file('photo')->getClientOriginalExtension();
+            //move image to public images folder
+            $request->file('photo')->move(public_path('images'), $fileName);
+            return back()->with('success', 'Your image has been uploaded');
+        }
+
+        if($request->file('document')){
+            $fileName = time().'.'.$request->file('document')->getClientOriginalExtension();
+            //move document to public document folder
+            $request->file('document')->move(public_path('documents'), $fileName);
+            return back()->with('success', 'Your document has been uploaded');
+        }
     }
 
     /**

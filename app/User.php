@@ -63,6 +63,15 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+
+    /**
+     * Get the survey choice responses associated with this User 
+     */
+    public function choices()
+    {
+        return $this->hasMany('App\Choice');
+    }
+
     /**
      * Get the demographic associated with this User 
      */

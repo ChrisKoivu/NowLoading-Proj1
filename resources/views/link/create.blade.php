@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+@auth
+       
+<div class="container-fluid">
+    <div class="row"> 
+       <!-- include sidenav -->
+        @include('layouts.partials.admin-sidenav')
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -14,7 +24,7 @@
                 <p>{{ \Session::get('duplicate') }}</p>
               </div><br />
             @endif            
-            <form method="POST" action="{{url('/links')}}">
+            <form method="POST" enctype="multipart/form-data" action="{{url('/links')}}">
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                    <label for="title">Title:</label>
@@ -56,13 +66,26 @@
                     </select>
                   </div>
                   
+                  <div>
+                      <label for="photo">Select thumbnail image: 
+                          <input type="file" name="photo" id="photo">
+                      </label>
+                  </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary">
                     Submit
                   </button>
-                </div>
+                </div>               
               </form> <!-- end of form -->
+
         </div><!-- end of col-md-8 -->
     </div>
 </div>
+
+</div>
+</div>
+</main>
+
+@endauth
+
 @endsection

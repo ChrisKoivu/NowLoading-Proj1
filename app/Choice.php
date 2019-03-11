@@ -14,7 +14,31 @@ class Choice extends Model
      * @var array
      */
     protected $fillable = [
-        'survey_response_option', 
+        'response_id', 'question_id', 'user_id'
     ];
+
+     /**
+     * Get the response associated with this choice
+     */
+    public function responses()
+    {
+        return $this->belongsTo('App\Response');
+    }
+
+    /**
+     * Get the question associated with this choice
+     */
+    public function question()
+    {
+        return $this->belongsTo('App\Question');
+    }
+
+    /**
+     * Get the user associated with this choice
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
 }

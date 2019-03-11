@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Survey;
 
 class Question extends Model
 {
@@ -19,11 +20,11 @@ class Question extends Model
 
 
     /**
-     * Get the Answers associated with this Question
+     * Get the responses associated with this Question
      */
-    public function response()
+    public function responses()
     {
-        return $this->hasOne('App\Response');
+        return $this->hasMany('App\Response');
     }
 
     /**
@@ -32,12 +33,14 @@ class Question extends Model
       
     public function surveys()
     {
-        return $this->belongsToMany('App\Question');
+        return $this->belongsToMany('App\Survey');
     }
 
+
+    // this is the answer that the respondent chose
     public function choices()
     {
-        return $this->hasMany('App\Choice');
+        return $this->hasOne('App\Choice');
     }
 
 }

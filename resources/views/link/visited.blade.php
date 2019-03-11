@@ -35,7 +35,16 @@
     </style>
 
 </head>
+
 <body>
+    @auth
+       
+    <div class="container-fluid">
+        <div class="row"> 
+           <!-- include sidenav -->
+            @include('layouts.partials.admin-sidenav')
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    
 
     <h3>Visited Links</h3>
     <p>These are the links visited by the users</p>
@@ -65,6 +74,12 @@
      <!-- Bootstrap core JavaScript -->
      <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>    
 
+    </div>
+  </div>
+  </main>
+  
+  @endauth
+  
 
 </body>
 </html>

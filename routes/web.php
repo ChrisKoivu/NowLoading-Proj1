@@ -18,9 +18,24 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/survey', 'SurveysController@index')->name('survey');
+
+Route::post('/survey', 'SurveysController@store');
+
+
+Route::get('/survey/show', 'SurveysController@show');
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'ProfileController@index');
+
+Route::get('/files', 'FilesController@index');
+
+
+Route::get('/files/upload', 'FilesController@upload');
+
+Route::post('/files/store', 'FilesController@store');
 
 
 Route::get('/links', 'LinksController@index')->name('links');

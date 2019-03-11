@@ -70,6 +70,11 @@ class LinksController extends Controller
                     $link->description=$request->input('description');
                     $link->url=$request->input('url');            
                     $link->category=$request->input('category'); 
+                    if($request->file('photo')){
+                        // if thumbnail is attached to link, save in storage and 
+                        // add filename to database
+                        $link->thumbnail=$this->saveThumbnail($request);
+                    }
                     $link->save();
                     return back()->with('success', 'Your link has been added'); 
                 }  else {
@@ -101,6 +106,13 @@ class LinksController extends Controller
     public function edit($id)
     {
         //
+    }
+
+    private function saveThumbnail($request){
+            $fileName = time().'.'.$request->file('photo')->getClientOriginalExtension();
+            //move image to public images folder
+            $request->file('photo')->move(public_path('images'), $fileName);
+            return $fileName;
     }
 
     /**
