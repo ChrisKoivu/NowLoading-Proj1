@@ -38,5 +38,26 @@ class QuestionSurveyTableSeeder extends Seeder
             'created_at' => NULL,
             'updated_at' => NULL,
         ]);
+
+        DB::table('question_survey')->insert([
+            'survey_id' => 2,
+            'question_id' => 5,
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
+
+        DB::table('question_survey')->insert([
+            'survey_id' => 2,
+            'question_id' => 6,
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
+
+        DB::table('question_survey')->insert([
+            'survey_id' => 2,
+            'question_id' => 7,
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
     }
 }

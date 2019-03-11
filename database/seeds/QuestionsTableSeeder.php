@@ -34,5 +34,23 @@ class QuestionsTableSeeder extends Seeder
             'created_at' => NULL,
             'updated_at' => NULL,
         ]);
+
+        DB::table('questions')->insert([
+            'survey_question' => 'How can we help?',
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
+
+        DB::table('questions')->insert([
+            'survey_question' => ' How old were you when diagnosed?',
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
+
+        DB::table('questions')->insert([
+            'survey_question' => ' Are you currently employed or seeking employment?',
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
     }
 }
