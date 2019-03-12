@@ -59,5 +59,61 @@ class QuestionSurveyTableSeeder extends Seeder
             'created_at' => NULL,
             'updated_at' => NULL,
         ]);
+
+        DB::table('question_survey')->insert([
+            'survey_id' => 3,
+            'question_id' => 8,
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
+
+        DB::table('question_survey')->insert([
+            'survey_id' => 3,
+            'question_id' => 9,
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
+
+        DB::table('question_survey')->insert([
+            'survey_id' => 4,
+            'question_id' => 10,
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
+
+        DB::table('question_survey')->insert([
+            'survey_id' => 4,
+            'question_id' => 11,
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
+
+        DB::table('question_survey')->insert([
+            'survey_id' => 4,
+            'question_id' => 12,
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
+
+        DB::table('question_survey')->insert([
+            'survey_id' => 5,
+            'question_id' => 13,
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
+
+        DB::table('question_survey')->insert([
+            'survey_id' => 5,
+            'question_id' => 14,
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
+
+        DB::table('question_survey')->insert([
+            'survey_id' => 5,
+            'question_id' => 15,
+            'created_at' => NULL,
+            'updated_at' => NULL,
+        ]);
     }
 }
