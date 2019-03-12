@@ -138,20 +138,18 @@ class SurveysController extends Controller
     private function getSurveyId(){
         $profession = Auth::user()->demographic->profession;
 
-        // this is going to always return the first survey
-        // until we add the additional surveys
         switch ($profession) {
             case 'CG':
-                return 1;
+                return 1; // Survey for Parent or Caregiver
             case 'AA':
-                return 1; // should be 2
+                return 2; // Survey for Adult on Spectrum
             case 'Emp':
-               return 1;  // should be 3
+               return 3;  // Survey for Employer
             case 'Prof':
-               return 1;  // should be 4
+               return 4;  // Survey for Professional
             case 'Com':
-               return 1;  // should be 5
+               return 5;  // Survey for Community
         }
-        return 1;
+        return 1; //Default Parent survey
     }
 }
