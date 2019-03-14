@@ -13,6 +13,18 @@ use App\Choice;
 
 class SurveysController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -20,15 +32,17 @@ class SurveysController extends Controller
      */
     public function index()
     {
-        // we are pulling only the first survey,
-        // as this is the only one we have created at
-        // this time.
-        $survey_id = $this->getSurveyId();
-        $survey = Survey::find($survey_id);
-        // we are getting all the questions with their associated
-        // response options
-        $questions = $survey->questions()->with('responses')->get();
-        return view('survey.index', compact('questions'));    
+        $user = Auth::user();
+        if(!$user->survey_complete){
+            $survey_id = $this->getSurveyId();
+            $survey = Survey::find($survey_id);
+            // get all the questions with their associated
+            // response options
+            $questions = $survey->questions()->with('responses')->get();
+            return view('survey.index', compact('questions'));    
+        }else{
+            return redirect()->route('home');
+        }
     }
 
     /**
@@ -49,9 +63,10 @@ class SurveysController extends Controller
      */
     public function store(Request $request)
     {
-        $user_id = Auth::user()->id;
-        $user = User::findOrFail($user_id);
+        $user = Auth::user();
         $input = $request->all();
+
+
 
         // save all entries at once
         // we dont know how many key/value pairs, 
