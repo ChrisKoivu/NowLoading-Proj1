@@ -91,10 +91,9 @@ class SurveysController extends Controller
         ->join('choices', 'choices.user_id', '=', 'users.id')
         ->join('responses', 'responses.id', '=', 'choices.response_id')
         ->join('questions','choices.question_id','=','questions.id')
-        ->select('choices.*', 'responses.*','questions.*')
-        ->where('user_id', '=', $user_id)->get();
+        ->select('users.name','choices.*', 'responses.*','questions.*')->get();
+        //->where('user_id', '=', $user_id)->get();
         return view('survey.show', compact('responses'));
-        //print_r($responses);
     }
 
     /**
