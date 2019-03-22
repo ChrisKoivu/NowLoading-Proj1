@@ -37,6 +37,8 @@
         </div>
     </section>
     <br/>
+    <footer class="footer">
+    </footer>
 @endsection
 
   

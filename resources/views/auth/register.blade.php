@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 justify-content-center">
             <div class="card">
                 <div class="card-header">Register</div>
 
@@ -260,4 +260,6 @@ function geolocate() {
         </div>
     </div>
 </div>
+<footer class="footer">
+</footer>
 @endsection

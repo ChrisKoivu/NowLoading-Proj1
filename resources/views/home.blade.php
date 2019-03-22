@@ -15,7 +15,7 @@
             <div class="col-lg-12 text-center"><br/>
                 <h1 class="text-uppercase section-heading" style="color:white">MS4A Resource Directory</h1>
                 <h3 class="section-subheading" style="color:white">
-                        This is the resource directory homepage. From here you can navigate to the links below to view specific resources
+                    This is the resource directory homepage. From here you can navigate to the links below to view specific resources
                 </h3>
             </div>
         </div>
@@ -24,13 +24,13 @@
         <div id="resourceTopics" class="container">
             <div class="row">
                 <div class="col-lg-12 text-center"><br/>
-                    <h2 class="text-uppercase section-heading" style="color:white">Resources</h2><br>
+                    <h2 class="text-uppercase section-heading" style="color:black">Resources</h2><br>
                 </div>
             </div>
             <div class="row ">
                 <div class="col-sm-6 col-md-4 portfolio-item">
                 <!--********************************************************************************-->
-                <div class="text-center"><h4><a href="#popup1" class="highlight disabled" style="color:white">Education</a></h4></div>
+                <div class="text-center"><h4><a id="link1" href="#popup1" class="highlight disabled" style="color:black">Education</a></h4></div>
                     <div class="box">
                         <a href="#popup1" class="btn" tabindex="-1"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Education Resources"></a>
                         <div id="popup1" class="overlay">
@@ -70,9 +70,9 @@
                 </div>
                 <!--********************************************************************************-->
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="#popup2" class="highlight disabled" style="color:white">Business</a></h4></div>
+                    <div class="text-center"><h4><a href="#popup2" class="highlight disabled" style="color:black">Business</a></h4></div>
                     <div class="box">
-                        <a href="#popup2" class="btn"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Business Resources"></a>
+                        <a href="#popup2" class="btn" tabindex="-1"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Business Resources"></a>
                         <div id="popup2" class="overlay">
                             <div class="popup">
                                 <div class="popup-header">
@@ -93,9 +93,9 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="#popup3" class="highlight disabled" style="color:white">Medical</a></h4></div>
+                    <div class="text-center"><h4><a href="#popup3" class="highlight disabled" style="color:black">Medical</a></h4></div>
                     <div class="box">
-                        <a href="#popup3" class="btn"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100" alt="Medical Resources"></a>
+                        <a href="#popup3" class="btn" tabindex="-1"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100" alt="Medical Resources"></a>
                         <div id="popup3" class="overlay">
                             <div class="popup">
                                 <div class="popup-header">
@@ -117,9 +117,9 @@
             </div>
             <div class="row">
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="popup4" class="highlight disabled" style="color:white">Family</a></h4></div>
+                    <div class="text-center"><h4><a href="#popup4" class="highlight disabled" style="color:black">Family</a></h4></div>
                     <div class="box">
-                        <a href="#popup4" class="btn"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Family Resources"></a>
+                        <a href="#popup4" class="btn" tabindex="-1"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Family Resources"></a>
                         <div id="popup4" class="overlay">
                             <div class="popup">
                                 <div class="popup-header">
@@ -140,9 +140,9 @@
                 </div>
                 <div class="col-sm-6 col-md-4 portfolio-item"></div>
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="#popup5" class="highlight disabled" style="color:white">Community</a></h4></div>
+                    <div class="text-center"><h4><a href="#popup5" class="highlight disabled" style="color:black">Community</a></h4></div>
                     <div class="box">
-                        <a href="#popup5" class="btn"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Community Resources"></a>
+                        <a href="#popup5" class="btn" tabindex="-1"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Community Resources"></a>
                         <div id="popup5" class="overlay">
                             <div class="popup">
                                 <div class="popup-header">
@@ -164,9 +164,9 @@
             </div>
             <div class="row">
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="#popup6" class="highlight disabled" style="color:white">Entertainment</a></h4></div>
+                    <div class="text-center"><h4><a href="#popup6" class="highlight disabled" style="color:black">Entertainment</a></h4></div>
                     <div class="box">
-                        <a href="#popup6" class="btn"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Entertainment Resources"></a>
+                        <a href="#popup6" class="btn" tabindex="-1"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Entertainment Resources"></a>
                         <div id="popup6" class="overlay">
                             <div class="popup">
                                 <div class="popup-header">
@@ -186,9 +186,9 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="#popup7" class="highlight disabled" style="color:white">Government</a></h4></div>
+                    <div class="text-center"><h4><a href="#popup7" class="highlight disabled" style="color:black">Government</a></h4></div>
                     <div class="box">
-                        <a href="#popup7" class="btn"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Government Resouces"></a>
+                        <a href="#popup7" class="btn" tabindex="-1"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Government Resouces"></a>
                         <div id="popup7" class="overlay">
                             <div class="popup">
                                 <div class="popup-header">
@@ -208,9 +208,9 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 portfolio-item">
-                    <div class="text-center"><h4><a href="#popup8" class="highlight disabled" style="color:white">Travel</a></h4></div>
+                    <div class="text-center"><h4><a href="#popup8" class="highlight disabled" style="color:black">Travel</a></h4></div>
                     <div class="box">
-                        <a href="#popup8" class="btn"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Travel Resources"></a>
+                        <a href="#popup8" class="btn" tabindex="-1"><img class="image" src="{{url('images/autismedu.jpg')}}" style="width:100%" alt="Travel Resources"></a>
                         <div id="popup8" class="overlay">
                             <div class="popup">
                                 <div class="popup-header">
@@ -233,23 +233,11 @@
         </div>
         <br/><br/>
     </section>
-    <section id="about" class="parallax bgimg-2" alt="">
+    <section id="" class="parallax bgimg-2" alt="">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center"><br/>
-                    <h2 class="text-uppercase" style="color:white">About</h2>
-                    <h3 class="section-subheading" style="color:white">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-4"></div> 
-                <div class="col-md-4"><span class="fa-stack fa-4x"><a href="https://makingstridesforautism.org/index.html"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-child fa-stack-1x fa-inverse"></i></a></span>
-                    <h4 class="section-heading" style="color:white">MS4A Main Site</h4>
-                    <p class="text-muted"><a href="https://makingstridesforautism.org/index.html" class="highlight amplify" target="_blank">Visit us on our main site here!</a>
-                </div>
-                <div class="col-md-4"></div>
             </div>
         </div>
     </section>
@@ -264,10 +252,11 @@
                 </div>
                 <div class="col-md-4 text-center">
                     <ul class="list-inline quicklinks">
-                        <li class="list-inline-item"><a href="#" class="highlight amplify custom-link custom-hover">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="{{url('home')}}" class="highlight amplify custom-link custom-hover">Home</a></li>
+                        <li class="list-inline-item"><a href="https://makingstridesforautism.org/about.html" class="highlight amplify custom-link custom-hover" target="_blank">About</a></li>
                         <li class="list-inline-item"><a href="#" class="highlight amplify custom-link custom-hover">Terms of Use</a></li>
                         <li class="list-inline-item"><a href="#resourceTopics" class="highlight amplify custom-link custom-hover">Resources</a></li>
-                        <li class="list-inline-item"><a href="{{url('home')}}" class="highlight amplify custom-link custom-hover">Home</a></li>
+                        <li class="list-inline-item"><a href="https://makingstridesforautism.org/about.html" class="highlight amplify custom-link custom-hover">Main Site</a></li>
                     </ul>
                 </div>
             </div>

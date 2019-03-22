@@ -111,7 +111,7 @@ i.text-primary  {
 /*disables a link completely for cursor accessibility*/
 
 .parallax {
-  height: 500px;
+  height: 400px;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -134,15 +134,21 @@ i.text-primary  {
 }
 
 .bgimg-3  {
-  background-image: url("");
-  min-height: 100%;
-  background-color:orange;
+  background-image: url("/images/map-v2.1.jpg");
+  background-size: contain;
+  
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  
+
+
+  
+
 }
 
-.bgimg-1, .bgimg-2, .bgimg3 {
+.bgimg-1, .bgimg-2 {
   position: relative;
-  background-position: center top;
-  background-size: cover;
+  background-position: center;
 }
 
 /*css for the pictures used in parallax*/

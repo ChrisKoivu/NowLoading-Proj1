@@ -5,7 +5,7 @@
       <div class="col-lg-12 text-center">
         <a href="https://makingstridesforautism.org/index.html" tabindex="-1" target="_blank"><img src="{{url('images/ms4a-sta-logo.png')}}" class="resize center"  alt="MS4A Logo"></a>
         <a href="#resourceDir" class="skip amplify">Skip Navigation</a>
-      </div>
+    </div>
     </header>
     <section class="parallax bgimg-1">
       <div class="container">
