@@ -33,6 +33,7 @@ class SurveysController extends Controller
     public function index()
     {
         $user = Auth::user();
+        // survey completion is required for each new user
         if(!$user->survey_complete){
             $survey_id = $this->getSurveyId();
             $survey = Survey::find($survey_id);
@@ -41,6 +42,7 @@ class SurveysController extends Controller
             $questions = $survey->questions()->with('responses')->get();
             return view('survey.index', compact('questions'));    
         }else{
+            // user already took survey
             return redirect()->route('home');
         }
     }
@@ -63,16 +65,17 @@ class SurveysController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
         $input = $request->all();
+        // get survey id for profession
+        $survey = Survey::find($this->getSurveyId());
+        // get user id of auth user
+        $user = User::find(Auth::user()->id);
+        // save the survey id and user id in database
+        $survey->users()->save($user);
 
-
-
-        // save all entries at once
-        // we dont know how many key/value pairs, 
-        // so we are looping through them all
+        // get all input choices at once
         foreach( $input as $key=>$data ) {
-          // strip out the token key from the response
+          // strip out the token key from the response choice
           if($key !=="_token"){
             $choice = new Choice(
                 [
@@ -97,9 +100,11 @@ class SurveysController extends Controller
      */
     public function show()
     {
-        $user_id = Auth::user()->id;
+       /*  $user_id = Auth::user()->id;
         $user = User::findOrFail($user_id);
-
+ */
+        $user = Auth::user();
+        $survey = $user->surveys->questions();
 
         // create a volunteers object with the fields we need
 	    $responses = DB::table('users')
@@ -108,7 +113,7 @@ class SurveysController extends Controller
         ->join('questions','choices.question_id','=','questions.id')
         ->select('users.name','choices.*', 'responses.*','questions.*')->get();
         //->where('user_id', '=', $user_id)->get();
-        return view('survey.show', compact('responses'));
+        return view('survey.show', compact('responses', 'survey'));
     }
 
     /**

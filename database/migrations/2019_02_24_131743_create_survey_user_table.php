@@ -1,10 +1,8 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
-class CreateQuestionsSurveyTable extends Migration
+class CreateSurveyUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +11,12 @@ class CreateQuestionsSurveyTable extends Migration
      */
     public function up()
     {
-        Schema::create('question_survey', function (Blueprint $table) {
+        Schema::create('survey_user', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('question_id')->unsigned();
-            $table->integer('survey_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->integer('survey_id')->unsigned();     
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -27,6 +24,6 @@ class CreateQuestionsSurveyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions_survey');
+        Schema::dropIfExists('survey_user');
     }
 }

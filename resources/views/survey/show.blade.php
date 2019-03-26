@@ -6,7 +6,7 @@
             <table>
 
                 <?php $username="";
-                
+                  print_r($survey);
                 ?>  
                 @foreach($responses as $response)
                     <?php 
