@@ -1,80 +1,198 @@
-.skip {
-    position: absolute;
-    top: -1000px;
-    left: -1000px;
-    height: 1px;
-    width: 1px;
-    text-align: left;
-    overflow: hidden;
+a:focus,
+a:hover,
+a:link,
+a:visited
+a:active {
+  text-decoration: none !important;
+}
+/*removes the underline from the links*/
+a.custom-hover:hover {
+  color: grey;
+}
+
+a.custom-link {
+  color:white;
+}
+
+a.skip {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  height: 1px;
+  width: 1px;
+  text-align: left;
+  overflow: hidden;
 }
 
 a.skip{
-    background-color: #007faa;
-  } 
+  background-color: #1978d4;
+} 
 
 a.skip:active, 
-a.skip:focus, 
-a.skip:hover {
-    left: 0; 
-    top: 0;
-    width: auto; 
-    height: auto; 
-    overflow: visible; 
-    color: white;
+a.skip:focus {
+  left: 0; 
+  top: 0;
+  width: auto; 
+  height: auto; 
+  overflow: visible; 
+  color: white;   
 }
+/*hides the skip nav link and changes background and font color when focused*/
 
-.brightness:active,
-.brightness:focus,
-.brightness:hover {
-    background-color: #007faa;
-    color: white;
+.highlight:focus {
+  background-color: #1978d4;
+  color:white;
 }
-/*This stylesheet hides the skip navigation link until tabbed to
-Also highlights buttons or links when tabbing through page*/
+/*highlights any buttons or links when focused*/
+
+.amplify:focus {
+  font-size: 1em;
+  margin: 0;
+  text-align: center;
+  -webkit-transition: font-size .5s ease;
+  -moz-transition: font-size .5s ease;
+  -o-transition: font-size .5s ease;
+  transition: font-size .5s ease;
+  font-size:1.7em;
+}
+/*amplifies any font that is focused or hovered*/
 
 .box {
-    position: relative;
-    width: 100%;
-  }
-  
-  .image {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: .5s ease;
-    backface-visibility: hidden;
-  }
-  
-  .middle {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  
-  .box:hover .image {
-    opacity: 0.3;
-  }
-  
-  .box:hover .middle {
-    opacity: 1;
-  }
-  
-  .text {
-    background-color: #007faa;
-    color: white;
-    font-size: 16px;
-    padding: 16px 32px;
-  }
-
-  /*when mouse hovers over picture it provides a link to resource page*/
-
-  i.text-primary{
-    color: #007faa !important;
+  position: relative;
+  width: 100%;
 }
-/********************************************/
+  
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+  
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 42.5%;
+  left: 42.5%;
+}
+  
+.box:hover .image {
+  opacity: 0.3;
+}
+  
+.box:hover .middle {
+  opacity: 1;
+}
+  
+/* .text {
+  background-color: #1978d4;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 50%;
+} */
+
+/*when mouse hovers over picture it provides a description after fading out the image hovered to resource page*/
+
+i.text-primary  {
+    color: #1978d4 !important;
+}
+/*changes color of the "i" images of bootstrap*/
+
+.disabled {
+  cursor: default;
+  pointer-events: none;
+  color:black;
+  text-decoration: none;
+}
+/*disables a link completely for cursor accessibility*/
+
+.parallax {
+  height: 400px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow:auto;
+}
+/*parallax allows scrolling with image*/
+
+.bgimg-1  {
+  background-image: url("/images/jax.jpg");
+  min-height: 100%;
+
+}
+
+.bgimg-2  {
+  background-image: url("/images/autism-kid.jpg");
+  min-height: 100%;
+}
+
+.bgimg-3  {
+  background-image: url("/images/map-v2.1.jpg");
+  background-size: contain;
+  
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  
+
+
+  
+
+}
+
+.bgimg-1, .bgimg-2 {
+  position: relative;
+  background-position: center;
+}
+
+/*css for the pictures used in parallax*/
+
+section, footer, header {
+  overflow: auto;
+}
+
+/*removes white spacing between sections*/
+
+p {
+  font-size:16px;
+}
+
+footer.footer {
+  height: 200px;
+  background-color: #1978d4;
+}
+
+header.header {
+  height: 200px;
+}
+/*custom header and footer*/
+
+hr.custom-line {
+  margin: 0;
+  padding: 0;
+  color:white;
+}
+/*custom hr*/
+
+img.resize {
+  max-width:50%;
+  max-height:50%;
+}
+
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+  top:70px;
+}
+
+
+
+
