@@ -57,45 +57,9 @@ a.skip:focus {
 }
 /*amplifies any font that is focused or hovered*/
 
-.box {
-  position: relative;
-  width: 100%;
-}
-  
-.image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
-  
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 42.5%;
-  left: 42.5%;
-}
-  
-.box:hover .image {
-  opacity: 0.3;
-}
-  
-.box:hover .middle {
-  opacity: 1;
-}
-  
-/* .text {
-  background-color: #1978d4;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
-  border-radius: 50%;
-} */
 
-/*when mouse hovers over picture it provides a description after fading out the image hovered to resource page*/
+  
+
 
 i.text-primary  {
     color: #1978d4 !important;
@@ -109,49 +73,6 @@ i.text-primary  {
   text-decoration: none;
 }
 /*disables a link completely for cursor accessibility*/
-
-.parallax {
-  height: 400px;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow:auto;
-}
-/*parallax allows scrolling with image*/
-
-.bgimg-1  {
-  background-image: url("/images/jax.jpg");
-  min-height: 100%;
-
-}
-
-.bgimg-2  {
-  background-image: url("/images/autism-kid.jpg");
-  min-height: 100%;
-}
-
-.bgimg-3  {
-  background-image: url("/images/map-v2.1.jpg");
-  background-size: contain;
-  
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  
-
-
-  
-
-}
-
-.bgimg-1, .bgimg-2 {
-  position: relative;
-  background-position: center;
-}
-
-/*css for the pictures used in parallax*/
 
 section, footer, header {
   overflow: auto;
@@ -192,6 +113,99 @@ img.center {
   position:relative;
   top:70px;
 }
+/****************************************************************************************/
+/*The below css is used for mapping out the links*/
+.bgimg {
+  background: url( "../images/map-v2.1.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 1000px;
+ }
+
+ .invisiblebox {
+  opacity:0;
+  width: 75px;
+  height: 75px;
+  text-decoration: none;
+  display:block;
+}
+  .invisiblebox:hover {
+    cursor: pointer;
+  }
+
+  /**Education**/
+ .box1 {
+  position: relative;
+  width: 50%;
+  display:block;
+  top: 635px;
+  right: -200px;  
+}
+/**Business**/
+.box2 {
+  position: relative;
+  width: 50%;
+  display:block;
+  top: 650px;
+  right: -735px;  
+}
+/**Medical**/
+.box3 {
+  position: relative;
+  width: 50%;
+  display:block;
+  top: 185px;
+  right: -435px;  
+}
+/**Family**/
+.box4 {
+  position: relative;
+  width: 50%;
+  display:block;
+  top: -130px;
+  right: -460px;  
+}
+/**Community**/
+.box5 {
+  position: relative;
+  width: 50%;
+  display:block;
+  top: -120px;
+  right: -535px;  
+}
+/**Entertainment**/
+.box6 {
+  position: relative;
+  width: 50%;
+  display:block;
+  top: 50px;
+  right: -400px;  
+}
+/**Government**/
+.box7 {
+  position: relative;
+  width: 50%;
+  display:block;
+  top: -275px;
+  right: -750px;  
+}
+/**Travel**/
+.box8 {
+  position: relative;
+  width: 50%;
+  display:block;
+  top: -715px;
+  right: -630px;  
+}
+
+
+
+
+
+
+
 
 
 

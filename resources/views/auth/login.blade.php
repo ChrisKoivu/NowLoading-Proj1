@@ -1,12 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+<header class="header">
+    <div class="col-lg-12 text-center">
+        <a href="https://makingstridesforautism.org/index.html" tabindex="-1" target="_blank"><img src="{{url('images/ms4a-sta-logo.png')}}" class="resize center"  alt="MS4A Logo"></a>
+    </div>
+</header>
+<body>
+<section class="parallax bgimg-2">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Login</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
@@ -48,7 +54,7 @@
                                 </div>
                             </div>
                         </div>
-   <div class="form-group">
+                <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Login
@@ -65,4 +71,9 @@
         </div>
     </div>
 </div>
+<br><br><br>
+</section>
+</body>
+<footer class="footer">
+</footer>
 @endsection

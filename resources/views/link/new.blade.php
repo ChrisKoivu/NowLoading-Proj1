@@ -16,7 +16,6 @@
           width: 100%;          
           border:none;
         }
-
         body{
             margin-top:60px;
         }
@@ -68,12 +67,11 @@
                           @endforeach
                           </table>
                     <?php } ?>
-                    
     <iframe  src="" name="myFrame" ></iframe>
 
 
 
-                 
+
      <!-- App Scripts -->
      <script src="{{ asset('js/app.js') }}"></script> 
      <!-- use axios -->
