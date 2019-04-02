@@ -72,37 +72,30 @@ class SurveysController extends Controller
         // we dont know how many key/value pairs, 
         // so we are looping through them all
         if(!Auth::user()->survey_complete){
-        foreach( $input as $key=>$data ) {
-          // strip out the token key from the response
-          if($key !=="_token"){
-            $choices = new Choice(
-                [
-                'question_id' => $key,
-                'response_id' => $data,
-                ]
-            );     
-                   
-            $response = $user->choices()->save($choices);
-          }
-        }
-        // mark that survey is complete
-        $survey_type_id = $this->getSurveyId();  
-         
-        $survey = new Survey;
-        $survey->survey_type_id = $survey_type_id;
-        $this_survey = $user->survey()->save($survey);
+            foreach( $input as $key=>$data ) {
+            // strip out the token key from the response
+                if($key !=="_token"){
+                    $choices = new Choice(
+                        [
+                        'question_id' => $key,
+                        'response_id' => $data,
+                        ]
+                    );     
+                        
+                    $response = $user->choices()->save($choices);
+                }
+            }
+            $survey_type_id = $this->getSurveyId();  
+            $survey = new Survey;
+            $survey->survey_type_id = $survey_type_id;
+            $this_survey = $user->survey()->save($survey);
+            $survey_type = SurveyType::find($survey_type_id);
+            $this_survey->surveyType()->attach($survey_type);
 
-
-        
-
-        $survey_type = SurveyType::find($survey_type_id);
-        $this_survey->surveyType()->attach($survey_type);
-
-        
-       
-        $user->survey_complete = 1;
-        $user->save();
-        return back()->with('success', 'Your entries have been saved.');  
+            // mark that survey is complete
+            $user->survey_complete = 1;
+            $user->save();
+            return back()->with('success', 'Your entries have been saved.');  
         } else{
             return view('home');
         }
@@ -116,22 +109,26 @@ class SurveysController extends Controller
      */
     public function show()
     {
-        $survey_type_id = $this->getSurveyId();
-        $users = User::all();
-        foreach ($users as $user){   
-            $survey = DB::table('survey_types')
-            ->join('surveys', 'surveys.survey_type_id', '=', 'survey_types.id')
-            ->join('question_survey_type', 'question_survey_type.survey_type_id','=',
-            'survey_types.id')
-            ->join('questions','questions.id','=','question_survey_type.question_id')
-            ->join('responses','responses.question_id','=','questions.id')
-            ->join('choices', 'responses.id',"=", 'choices.response_id')
-            ->join('users',"users.id","=",'choices.user_id')
-            ->select('questions.survey_question','responses.survey_question_response')
-            ->where('users.id', $user->id)->get()->unique();         
-             $user_surveys[$user->name]['survey']=$survey;       
-        }      
-        return view('survey.show', compact('user_surveys','users'));
+        if(Auth::user()->permission('canReadReports')){
+            $survey_type_id = $this->getSurveyId();
+            $users = User::all();
+            foreach ($users as $user){   
+                $survey = DB::table('survey_types')
+                ->join('surveys', 'surveys.survey_type_id', '=', 'survey_types.id')
+                ->join('question_survey_type', 'question_survey_type.survey_type_id','=',
+                'survey_types.id')
+                ->join('questions','questions.id','=','question_survey_type.question_id')
+                ->join('responses','responses.question_id','=','questions.id')
+                ->join('choices', 'responses.id',"=", 'choices.response_id')
+                ->join('users',"users.id","=",'choices.user_id')
+                ->select('questions.survey_question','responses.survey_question_response')
+                ->where('users.id', $user->id)->get()->unique();         
+                $user_surveys[$user->name]['survey']=$survey;       
+            }      
+            return view('survey.show', compact('user_surveys','users'));
+        } else {
+            return view('home');
+        }
     }
 
     /**

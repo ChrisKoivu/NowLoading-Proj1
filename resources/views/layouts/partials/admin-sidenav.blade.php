@@ -41,9 +41,9 @@
               </li>
               
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="{{url('/survey/show')}}">
                 <span data-feather="bar-chart-2"></span>
-                Reports
+                Review Surveys
               </a>
             </li>
             
