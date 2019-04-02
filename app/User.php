@@ -80,12 +80,15 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasOne('App\Demographic');
     }
 
+
+
+
     /**
      * Get the surveys for the user.
      */
-    public function surveys()
+    public function survey()
     {
-        return $this->belongsToMany('App\Survey');
+        return $this->hasOne('App\Survey');
     }
     /**
      * check if user role has permission to perform

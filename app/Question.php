@@ -31,9 +31,9 @@ class Question extends Model
      * Get the Surveys that this Question is associated with.
      */
       
-    public function surveys()
+    public function surveyType()
     {
-        return $this->belongsToMany('App\Survey');
+        return $this->belongsTo('App\SurveyType');
     }
 
 

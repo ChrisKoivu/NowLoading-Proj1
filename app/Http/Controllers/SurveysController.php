@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Survey;
+use App\SurveyType;
 use App\User;
 use App\Choice;
 
@@ -33,9 +34,10 @@ class SurveysController extends Controller
     public function index()
     {
         $user = Auth::user();
+        
         if(!$user->survey_complete){
-            $survey_id = $this->getSurveyId();
-            $survey = Survey::find($survey_id);
+            $survey_id = $this->getSurveyId();           
+            $survey = SurveyType::find($survey_id);
             // get all the questions with their associated
             // response options
             $questions = $survey->questions()->with('responses')->get();
@@ -63,30 +65,47 @@ class SurveysController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
+        $user_id = Auth::user()->id;
+        $user = User::findOrFail($user_id);
         $input = $request->all();
-
-
-
         // save all entries at once
         // we dont know how many key/value pairs, 
         // so we are looping through them all
+        if(!Auth::user()->survey_complete){
         foreach( $input as $key=>$data ) {
           // strip out the token key from the response
           if($key !=="_token"){
-            $choice = new Choice(
+            $choices = new Choice(
                 [
                 'question_id' => $key,
                 'response_id' => $data,
                 ]
-            );            
-            $user->choices()->save($choice);
+            );     
+                   
+            $response = $user->choices()->save($choices);
           }
         }
         // mark that survey is complete
+        $survey_type_id = $this->getSurveyId();  
+         
+        $survey = new Survey;
+        $survey->survey_type_id = $survey_type_id;
+        $this_survey = $user->survey()->save($survey);
+
+
+        
+
+        $survey_type = SurveyType::find($survey_type_id);
+        $this_survey->surveyType()->attach($survey_type);
+
+        
+       
         $user->survey_complete = 1;
         $user->save();
         return back()->with('success', 'Your entries have been saved.');  
+        } else{
+            return view('home');
+        }
     }
 
     /**
@@ -97,18 +116,22 @@ class SurveysController extends Controller
      */
     public function show()
     {
-        $user_id = Auth::user()->id;
-        $user = User::findOrFail($user_id);
-
-
-        // create a volunteers object with the fields we need
-	    $responses = DB::table('users')
-        ->join('choices', 'choices.user_id', '=', 'users.id')
-        ->join('responses', 'responses.id', '=', 'choices.response_id')
-        ->join('questions','choices.question_id','=','questions.id')
-        ->select('users.name','choices.*', 'responses.*','questions.*')->get();
-        //->where('user_id', '=', $user_id)->get();
-        return view('survey.show', compact('responses'));
+        $survey_type_id = $this->getSurveyId();
+        $users = User::all();
+        foreach ($users as $user){   
+            $survey = DB::table('survey_types')
+            ->join('surveys', 'surveys.survey_type_id', '=', 'survey_types.id')
+            ->join('question_survey_type', 'question_survey_type.survey_type_id','=',
+            'survey_types.id')
+            ->join('questions','questions.id','=','question_survey_type.question_id')
+            ->join('responses','responses.question_id','=','questions.id')
+            ->join('choices', 'responses.id',"=", 'choices.response_id')
+            ->join('users',"users.id","=",'choices.user_id')
+            ->select('questions.survey_question','responses.survey_question_response')
+            ->where('users.id', $user->id)->get()->unique();         
+             $user_surveys[$user->name]['survey']=$survey;       
+        }      
+        return view('survey.show', compact('user_surveys','users'));
     }
 
     /**

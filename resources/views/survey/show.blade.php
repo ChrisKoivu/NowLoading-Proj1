@@ -1,6 +1,17 @@
 <!-- admin.blade.php -->
 @extends('layouts.app')
 @section('content') 
+
+<style>
+  table {
+      margin-top: 10px;
+      margin-bottom:60px;
+  }
+
+  td, th{
+      padding:0px 10px;
+  }
+</style>
     <section class="parallax bgimg-1">
         <div class="col-lg-12 text-center">
         </div>
@@ -8,31 +19,36 @@
     <section>
         <div class="container">
         @auth      
-            <table>
-                <?php $username="";?>  
-                @foreach($responses as $response)
-                    <?php 
-                    if($username !== $response->name){            
-                        $username = $response->name;
-                        echo '  <h3 class="text-uppercase section-heading"> 
-                                    Survey for ' . $username . '
-                                </h3>
-                                <hr>
-                                <br/>   ';
-                    }   
-                    ?>
-                    <label class="form-check-label">
-                        <tr>
-                            <td>
-                                <p>
-                                    {{$response->survey_question}}&nbsp;<i class="fa fa-arrow-right"></i>&nbsp;
-                                    {{$response->survey_question_response}}  
-                                </p>   
-                            </td>                 
-                        </tr>  
-                    </label>      
-                @endforeach
-            </table>
+            
+                <?php 
+
+                 
+               foreach($users as $user){ 
+                   
+                echo 'Responses for ' . $user->name; ?>
+                   <table>
+                      <tr><th>Question</th><th>Response</th></tr>
+                       <?php    
+                     foreach($user_surveys[$user->name]['survey'] as $question=>$value){ 
+                       
+                        echo '<tr><td>' . $value->survey_question . '</td><td>' . $value->survey_question_response
+                        . '</td></tr>';
+                        
+                     
+                     }  
+                     ?>
+                    </table>
+
+                <?php } ?>
+             
+                   
+             
+                  
+
+
+            
+
+          
         @endauth
         </div>
     </section>
