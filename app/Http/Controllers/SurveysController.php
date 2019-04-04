@@ -125,6 +125,7 @@ class SurveysController extends Controller
                 ->where('users.id', $user->id)->get()->unique();         
                 $user_surveys[$user->name]['survey']=$survey;       
             }      
+            
             return view('survey.show', compact('user_surveys','users'));
         } else {
             return view('home');

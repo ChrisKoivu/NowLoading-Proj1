@@ -21,11 +21,10 @@
         @auth      
             
                 <?php 
-
                  
                foreach($users as $user){ 
                    
-                echo 'Responses for ' . $user->name; ?>
+                echo '<h4>Responses for ' . $user->name . '</h4>'; ?>
                    <table>
                       <tr><th>Question</th><th>Response</th></tr>
                        <?php    
