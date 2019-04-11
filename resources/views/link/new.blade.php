@@ -36,37 +36,66 @@
 </head>
 
 <body style="overflow:hidden">
-          <button class="btn btn-link" type="button" data-toggle="collapse" 
-         data-target="#link" aria-expanded="true" 
-         aria-controls="link">
-                Hide/Show Links
+        <table style="width:100%">
+          <tr>
+            <td>
+              <button class="btn btn-link" type="button" data-toggle="collapse" 
+                data-target="#link" aria-expanded="true" 
+                aria-controls="link">
+                  Hide/Show Links
               </button>
-         
-                  <?php if(!empty($links)){ ?>
-                        <table>
-                        @foreach($links as $link)     
-                           <tr>                           
-                            <td id="link">
-                              <a href="{{$link['url']}}" 
-                              onclick="trackLink({{Auth::user()->id}}, {{$link['id']}} )"
-                               target="myFrame">
-                               {{$link['title']}}
-                              </a>
-                            </td>
-                            @if($link['thumbnail'])
-                             <td id="link">
-                                <a href="{{$link['url']}}" 
-                                onclick="trackLink({{Auth::user()->id}}, {{$link['id']}} )"
-                                 target="myFrame">
-                                <img src="{{asset('/images/'. $link['thumbnail'])}}" alt="{{ $link['thumbnail']}}" 
-                                height="42" width="42">
-                                </a>
-                             </td>
-                            @endif
-                          </tr>
-                          @endforeach
-                          </table>
-                    <?php } ?>
+              <hr>
+            </td>
+          </tr>
+        </table>
+            <?php if(!empty($links)){ ?>
+              <table style="width:100%">
+                @foreach($links as $link)     
+                  <tr>
+                    @if($link['thumbnail'])
+                    <td id="link">
+                      <a href="{{$link['url']}}" 
+                        onclick="trackLink({{Auth::user()->id}}, {{$link['id']}} )"
+                        target="myFrame">
+                        <img src="{{asset('/images/'. $link['thumbnail'])}}" alt="{{ $link['thumbnail']}}" 
+                          height="42" width="42">
+                      </a>
+                      </td>
+                    @endif
+                    <td id="link">
+                      <a href="{{$link['url']}}" onclick="trackLink({{Auth::user()->id}}, {{$link['id']}} )"
+                        target="myFrame">
+                        {{$link['title']}}
+                      </a>
+                    </td>
+                  </tr>
+                @endforeach
+              </table>     
+            <?php }?>
+        <table style="width: 100%">
+          <tr>
+            <td>
+              <button class="btn btn-link" type="button" data-toggle="collapse" 
+                data-target="" aria-expanded="true" 
+                aria-controls="">
+                  Hide/Show PDF's
+              </button>
+              <hr>
+            </td>
+          </tr>
+        </table>
+        <table style="width:100%">
+          <tr>
+            <td>
+                <button class="btn btn-link" type="button" data-toggle="collapse" 
+                data-target="" aria-expanded="true" 
+                aria-controls="">
+                  Hide/Show Videos
+              </button>
+              <hr>
+            </td>
+          </tr>
+        </table>
     <iframe  src="" name="myFrame" ></iframe>
 
 

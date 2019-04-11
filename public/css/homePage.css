@@ -126,10 +126,11 @@ img.center {
 
  .invisiblebox {
   opacity:0;
-  width: 75px;
-  height: 75px;
+  width: 95px;
+  height: 95px;
   text-decoration: none;
   display:block;
+  
 }
   .invisiblebox:hover {
     cursor: pointer;
@@ -137,67 +138,73 @@ img.center {
 
   /**Education**/
  .box1 {
-  position: relative;
+  position: absolute;
   width: 50%;
   display:block;
-  top: 635px;
-  right: -200px;  
+  top: 1250px;
+  right: 370px;  
 }
 /**Business**/
 .box2 {
-  position: relative;
+  position: absolute;
   width: 50%;
   display:block;
-  top: 650px;
-  right: -735px;  
+  top: 1375px;
+  right: -175px;  
 }
 /**Medical**/
 .box3 {
-  position: relative;
+  position: absolute;
   width: 50%;
   display:block;
-  top: 185px;
-  right: -435px;  
+  top: 1020px;
+  right: 130px;  
 }
 /**Family**/
 .box4 {
-  position: relative;
+  position: absolute;
   width: 50%;
   display:block;
-  top: -130px;
-  right: -460px;  
+  top: 790px;
+  right: 110px;  
 }
 /**Community**/
 .box5 {
-  position: relative;
+  position: absolute;
   width: 50%;
   display:block;
-  top: -120px;
-  right: -535px;  
+  top: 950px;
+  right: 30px;  
 }
 /**Entertainment**/
 .box6 {
-  position: relative;
+  position: absolute;
   width: 50%;
   display:block;
-  top: 50px;
-  right: -400px;  
+  top: 1200px;
+  right: 165px;  
 }
 /**Government**/
 .box7 {
-  position: relative;
+  position: absolute;
   width: 50%;
   display:block;
-  top: -275px;
-  right: -750px;  
+  top: 975px;
+  right: -190px;  
 }
 /**Travel**/
 .box8 {
-  position: relative;
+  position: absolute;
   width: 50%;
   display:block;
-  top: -715px;
-  right: -630px;  
+  top: 670px;
+  right: -70px;  
+}
+
+a.ol {
+  border: 2px solid black;
+  background-color: white;
+  color: #1978d4;
 }
 
 
