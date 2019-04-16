@@ -10,16 +10,14 @@
     </div>
 </header>
 <body id="page-top">
-    <section id="services"alt=""> <!--removed parallax and image -->
-        <div class="container">
-            <div class="col-lg-12 text-center"><br/>
-                <h1 class="text-uppercase section-heading" style="color:white">MS4A Resource Directory</h1>
-                <h3 class="section-subheading" style="color:black">
-                    This is the resource directory homepage. From here you can navigate to the icons below to view specific resources
-                </h3>
-            </div>
+    <div class="container">
+        <div class="col-lg-12 text-center"><br/>
+            <h1 class="text-uppercase section-heading" style="color:white">MS4A Resource Directory</h1>
+            <h3 class="section-subheading" style="color:black">
+                This is the resource directory homepage. From here you can navigate to the icons below to view specific resources
+            </h3>
         </div>
-    </section>
+    </div>
     <div class="row">
         <div class="col-lg-12 text-center"><br/>
             <h2 class="text-uppercase section-heading" style="color:black">Resources</h2><br>
@@ -214,14 +212,6 @@
                               
     </div>
     <br/><br/>
-    <section id=""  alt=""> <!--removed parallax and image -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center"><br/>
-                </div>
-            </div>
-        </div>
-    </section>
     <section style="background-color: #1978d4">
         <div class="container">
             <div class="row">
