@@ -107,14 +107,21 @@ class ReportsController extends Controller
         } 
     }
 
+    /**
+     * transforms query array to array of objects in a 
+     * printable form
+     */
+
     private function transformArray($dataArray){
         $array = [];
         $i=0;
         $items = sizeOf($dataArray);      
         If($items > 0) {
             foreach($dataArray as $result){
-            $array[$result->survey_question][]=$dataArray[$i];          
-            $i++;
+                // add response object array to stack
+                $array[$result->survey_question][]=$dataArray[$i];    
+                // go to next response object array   
+                $i++;
             }            
             return $array;
         } else {
