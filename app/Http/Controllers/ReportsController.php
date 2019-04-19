@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\DatabaseHelper;
 
-class PostsController extends Controller
+
+class ReportsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -46,6 +48,9 @@ class PostsController extends Controller
     public function show($id)
     {
         //
+        $report = $this->selectReport($id);
+        return view('reports.show', compact('report'));    
+
     }
 
     /**
@@ -80,5 +85,40 @@ class PostsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function selectReport($report_id){
+        $db = new DatabaseHelper;
+        switch ($report_id) {
+            case 1:
+               return $this->transformArray($db->getResponseTotalsCaregiver());
+            case 2:
+               return $this->transformArray($db->getResponseTotalsSpectrum()); 
+            case 3:
+                return $this->transformArray($db->getResponseTotalsEmployer());
+            case 4:
+                return $this->transformArray($db->getResponseTotalsProfessional());
+            case 5:
+                 return $this->transformArray($db->getResponseTotalsCommunity());
+            case 6:
+                 return $db->getProfessionTotalsByZipCode();            
+            default:
+                 return null;
+        } 
+    }
+
+    private function transformArray($dataArray){
+        $array = [];
+        $i=0;
+        $items = sizeOf($dataArray);      
+        If($items > 0) {
+            foreach($dataArray as $result){
+            $array[$result->survey_question][]=$dataArray[$i];          
+            $i++;
+            }            
+            return $array;
+        } else {
+            return 'no records found';
+        }
     }
 }

@@ -11,7 +11,7 @@ class DatabaseHelper
    public function getResponseTotalsCaregiver(){
 
       $response_totals = 
-      DB::select(DB::raw("SELECT count(choices.response_id), questions.survey_question, responses.survey_question_response
+      DB::select(DB::raw("SELECT count(choices.response_id) as total, questions.survey_question, responses.survey_question_response
       FROM `choices`
       INNER JOIN responses on responses.id = choices.response_id
       INNER JOIN questions on questions.id = choices.question_id
@@ -26,9 +26,8 @@ class DatabaseHelper
    }
 
    public function getResponseTotalsSpectrum(){
-
-      $response_totals = 
-      DB::select(DB::raw("SELECT count(choices.response_id), questions.survey_question, responses.survey_question_response
+      $response_totals =
+      DB::select(DB::raw("SELECT count(choices.response_id) as total, questions.survey_question, responses.survey_question_response
       FROM `choices`
       INNER JOIN responses on responses.id = choices.response_id
       INNER JOIN questions on questions.id = choices.question_id
@@ -38,14 +37,12 @@ class DatabaseHelper
     
       return $response_totals;
 
-
                 
    }
 
    public function getResponseTotalsEmployer(){
-
-      $response_totals = 
-      DB::select(DB::raw("SELECT count(choices.response_id), questions.survey_question, responses.survey_question_response
+      $response_totals =
+      DB::select(DB::raw("SELECT count(choices.response_id) as total, questions.survey_question, responses.survey_question_response
       FROM `choices`
       INNER JOIN responses on responses.id = choices.response_id
       INNER JOIN questions on questions.id = choices.question_id
@@ -55,14 +52,12 @@ class DatabaseHelper
     
       return $response_totals;
 
-
                 
    }
 
    public function getResponseTotalsProfessional(){
-
-      $response_totals = 
-      DB::select(DB::raw("SELECT count(choices.response_id), questions.survey_question, responses.survey_question_response
+      $response_totals =
+      DB::select(DB::raw("SELECT count(choices.response_id) as total, questions.survey_question, responses.survey_question_response
       FROM `choices`
       INNER JOIN responses on responses.id = choices.response_id
       INNER JOIN questions on questions.id = choices.question_id
@@ -72,14 +67,12 @@ class DatabaseHelper
     
       return $response_totals;
 
-
                 
    }
 
    public function getResponseTotalsCommunity(){
-
-      $response_totals = 
-      DB::select(DB::raw("SELECT count(choices.response_id), questions.survey_question, responses.survey_question_response
+      $response_totals =
+      DB::select(DB::raw("SELECT count(choices.response_id) as total, questions.survey_question, responses.survey_question_response
       FROM `choices`
       INNER JOIN responses on responses.id = choices.response_id
       INNER JOIN questions on questions.id = choices.question_id
@@ -89,19 +82,50 @@ class DatabaseHelper
     
       return $response_totals;
 
-
                 
    }
 
    public function getProfessionTotalsByZipCode(){
       $response_totals = 
-      DB::select(DB::raw("SELECT count(demographics.profession), demographics.zip, demographics.profession FROM `demographics`
+      DB::select(DB::raw("SELECT count(demographics.profession) as total, demographics.zip, demographics.profession FROM `demographics`
       group by demographics.profession, demographics.zip"));
     
       return $response_totals;
 
 
    }
+
+
+   //outputs records to csv file stream
+
+   public function export($arrayData)
+{
+    $headers = array(
+        "Content-type" => "text/csv",
+        "Content-Disposition" => "attachment; filename=file.csv",
+        "Pragma" => "no-cache",
+        "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
+        "Expires" => "0"
+    );
+
+    $reviews = Reviews::getReviewExport($this->hw->healthwatchID)->get();
+    $columns = array('ReviewID', 'Provider', 'Title', 'Review', 'Location', 'Created', 'Anonymous', 'Escalate', 'Rating', 'Name');
+
+    $callback = function() use ($reviews, $columns)
+    {
+        $file = fopen('php://output', 'w');
+        fputcsv($file, $columns);
+
+        foreach($reviews as $review) {
+            fputcsv($file, array($review->reviewID, $review->provider, 
+            $review->title, $review->review, $review->location, 
+            $review->review_created, $review->anon, $review->escalate, 
+            $review->rating, $review->name));
+        }
+        fclose($file);
+    };
+    return Response::stream($callback, 200, $headers);
+}
 
 
 
