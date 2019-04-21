@@ -14,8 +14,9 @@ class ReportsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {        
+        $reports = \File::allFiles(public_path('reports'));
+        return view('report.index', compact('reports'));
     }
 
     /**
@@ -47,10 +48,14 @@ class ReportsController extends Controller
      */
     public function show($id)
     {
-        //
-        $report = $this->selectReport($id);
-        return view('reports.show', compact('report'));    
-
+        $profession = str_replace('_', ' ', $this->getReportName($id));
+        if ($id < 6 ) {
+            $report = $this->transformArray($this->selectReport($id));
+        } else {
+            $report = $this->selectReport($id);
+            return view('report.profession', compact('report'));
+        }
+        return view('report.show', compact('report', 'profession'));  
     }
 
     /**
@@ -87,19 +92,24 @@ class ReportsController extends Controller
         //
     }
 
+    /**
+     * performs query based on report type id
+     */
+
     private function selectReport($report_id){
+        // create new database helper instance
         $db = new DatabaseHelper;
         switch ($report_id) {
             case 1:
-               return $this->transformArray($db->getResponseTotalsCaregiver());
+               return $db->getResponseTotalsCaregiver();
             case 2:
-               return $this->transformArray($db->getResponseTotalsSpectrum()); 
+               return $db->getResponseTotalsSpectrum(); 
             case 3:
-                return $this->transformArray($db->getResponseTotalsEmployer());
+                return $db->getResponseTotalsEmployer();
             case 4:
-                return $this->transformArray($db->getResponseTotalsProfessional());
+                return $db->getResponseTotalsProfessional();
             case 5:
-                 return $this->transformArray($db->getResponseTotalsCommunity());
+                 return $db->getResponseTotalsCommunity();
             case 6:
                  return $db->getProfessionTotalsByZipCode();            
             default:
@@ -108,11 +118,57 @@ class ReportsController extends Controller
     }
 
     /**
+     * returns name of the report based on the report id
+     */
+    private function getReportName($report_id){
+        switch ($report_id) {
+            case 1:
+              return 'Parent_Caregiver_';
+            case 2:
+              return 'Adult_on_Spectrum_';
+            case 3:
+               return 'Employer_';
+            case 4: 
+                return 'Professional_';
+            case 5: 
+                 return 'Community_';
+            case 6:
+                 return 'Professions_by_zipcode_';
+            default:
+                  return null;
+        }
+    }
+
+    /**
+     * controller method for generating a csv file
+     */
+    public function generate($id){       
+        $report = $this->selectReport($id);
+        $reportName = $this->getReportName($id);
+        $db = new DatabaseHelper;
+
+        if(sizeOf($report)>0){   
+            if ($id < 6 ) {
+              $db->export_csv($report, $reportName);
+              return redirect('report');
+            } else {
+              $db->export_csv_professions($report, $reportName);
+              return redirect('report');
+            }       
+            
+        } else {
+            echo 'No records found for selected report type';
+        }
+
+    }
+
+    /**
      * transforms query array to array of objects in a 
      * printable form
      */
 
     private function transformArray($dataArray){
+        //die(print_r($dataArray));
         $array = [];
         $i=0;
         $items = sizeOf($dataArray);      

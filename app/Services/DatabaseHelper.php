@@ -3,6 +3,9 @@
 
 namespace App\Services;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
+
 
 
 class DatabaseHelper
@@ -95,50 +98,38 @@ class DatabaseHelper
 
    }
 
+   /**
+    * convert survey query array to a csv file
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+  
 
-   //outputs records to csv file stream
+   public function export_csv($arrayData, $reportName)
+   {
+      $reportName = $reportName . 'report.csv';
+      $file_path = public_path('reports') . '/' . $reportName;
+      $file = fopen($file_path,"w");
+      fputcsv($file, array("Question", "Response", "Total Responses"));
+      foreach ($arrayData as $line)
+      {
+        fputcsv($file, array($line->survey_question, $line->survey_question_response, 
+        $line->total));
+      }
+      fclose($file);    
+   }
 
-   public function export($arrayData)
-{
-    $headers = array(
-        "Content-type" => "text/csv",
-        "Content-Disposition" => "attachment; filename=file.csv",
-        "Pragma" => "no-cache",
-        "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
-        "Expires" => "0"
-    );
-
-    $reviews = Reviews::getReviewExport($this->hw->healthwatchID)->get();
-    $columns = array('ReviewID', 'Provider', 'Title', 'Review', 'Location', 'Created', 'Anonymous', 'Escalate', 'Rating', 'Name');
-
-    $callback = function() use ($reviews, $columns)
-    {
-        $file = fopen('php://output', 'w');
-        fputcsv($file, $columns);
-
-        foreach($reviews as $review) {
-            fputcsv($file, array($review->reviewID, $review->provider, 
-            $review->title, $review->review, $review->location, 
-            $review->review_created, $review->anon, $review->escalate, 
-            $review->rating, $review->name));
-        }
-        fclose($file);
-    };
-    return Response::stream($callback, 200, $headers);
+   public function export_csv_professions($arrayData, $reportName)
+   {
+      $reportName = $reportName . 'report.csv';
+      $file_path = public_path('reports') . '/' . $reportName;
+      $file = fopen($file_path,"w");
+      fputcsv($file, array("Profession", "Zip Code", "Total in Zip Code"));
+      foreach ($arrayData as $line)
+      {
+        fputcsv($file, array($line->profession, $line->zip, 
+        $line->total));
+      }
+      fclose($file);    
+   }
 }
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-?>

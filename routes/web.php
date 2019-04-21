@@ -25,9 +25,11 @@ Route::post('/survey', 'SurveysController@store');
 
 Route::get('/survey/show', 'SurveysController@show');
 
-Route::get('/reports/show/{id}', 'ReportsController@show');
+Route::get('/report', 'ReportsController@index');
 
+Route::get('/report/show/{id}', 'ReportsController@show');
 
+Route::get('/report/generate/{id}', 'ReportsController@generate');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
