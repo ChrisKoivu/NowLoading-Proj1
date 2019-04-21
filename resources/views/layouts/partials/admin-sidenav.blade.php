@@ -28,15 +28,22 @@
               </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url('/files')}}">
-                <span data-feather="shopping-cart"></span>
+                <span data-feather="file"></span>
                 View Files
               </a>
             </li>
             
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/files/upload')}}">
-                  <span data-feather="shopping-cart"></span>
+                  <span data-feather="file"></span>
                   Upload Files
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="{{url('/report')}}">
+                  <span data-feather="file"></span>
+                  View/Generate Reports
                 </a>
               </li>
               

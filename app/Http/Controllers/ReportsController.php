@@ -142,11 +142,13 @@ class ReportsController extends Controller
     /**
      * controller method for generating a csv file
      */
-    public function generate($id){       
+    public function generate(Request $request){   
+        
+        $id = $request->report_id;   
+        
         $report = $this->selectReport($id);
         $reportName = $this->getReportName($id);
-        $db = new DatabaseHelper;
-
+        $db = new DatabaseHelper;        
         if(sizeOf($report)>0){   
             if ($id < 6 ) {
               $db->export_csv($report, $reportName);
@@ -157,7 +159,8 @@ class ReportsController extends Controller
             }       
             
         } else {
-            echo 'No records found for selected report type';
+            $message =  'No records found for the selected report type';          
+            return view('report.empty', compact('message'));              
         }
 
     }

@@ -29,7 +29,7 @@ Route::get('/report', 'ReportsController@index');
 
 Route::get('/report/show/{id}', 'ReportsController@show');
 
-Route::get('/report/generate/{id}', 'ReportsController@generate');
+Route::post("/report/generate", "ReportsController@generate");
 
 Route::get('/home', 'HomeController@index')->name('home');
 
