@@ -16,8 +16,8 @@ Auth::routes();
 
     
 
-Route::get('/', 'HomeController@index')->name('home');
-
+Route::get('/', 'LandingController@index')->name('landingpage'); //this was changed from homecontroller ->name('home')
+                                                                 //to landingcontroller ->name('landingpage')
 Route::get('/survey', 'SurveysController@index')->name('survey');
 
 Route::post('/survey', 'SurveysController@store');
