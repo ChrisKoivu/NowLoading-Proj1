@@ -27,7 +27,7 @@
     <div id="resourceTopics" class="container bgimg">
 
         <div class="box1">
-            <h4><a id="link1" href="#popup1" class="highlight disabled ol">Education</a></h4>
+            <h5><a id="link1" href="#popup1" class="highlight disabled ol">Education</a></h5>
             <a href="#popup1" class="invisiblebox" tabindex="-1"><button class="invisiblebox" tabindex="-1">Education</button></a>
             <div id="popup1" class="overlay">
                 <div class="popup">
@@ -50,7 +50,7 @@
         </div>
 
         <div class="box2">
-            <h4><a id="link2" href="#popup2" class="highlight disabled ol">Business</a></h4>
+            <h5><a id="link2" href="#popup2" class="highlight disabled ol">Business</a></h5>
             <a href="#popup2" class="invisiblebox" tabindex="-1"><button class="invisiblebox" tabindex="-1">Business</button></a>
             <div id="popup2" class="overlay">
                 <div class="popup">
@@ -73,7 +73,7 @@
         </div>
 
         <div class="box3">
-            <h4><a id="link3" href="#popup3" class="highlight disabled ol">Medical</a></h4>
+            <h5><a id="link3" href="#popup3" class="highlight disabled ol">Medical</a></h5>
             <a href="#popup3" class="invisiblebox" tabindex="-1"><button class="invisiblebox" tabindex="-1">Medical</button></a>
             <div id="popup3" class="overlay">
                 <div class="popup">
@@ -96,7 +96,7 @@
         </div>
 
         <div class="box4">
-            <h4><a id="link4" href="#popup4" class="highlight disabled ol">Family</a></h4>
+            <h5><a id="link4" href="#popup4" class="highlight disabled ol">Family</a></h5>
             <a href="#popup4" class="invisiblebox" tabindex="-1"><button class="invisiblebox" tabindex="-1">Family</button></a>
             <div id="popup4" class="overlay">
                 <div class="popup">
@@ -119,7 +119,7 @@
         </div>
 
         <div class="box5">
-            <h4><a id="link5" href="#popup5" class="highlight disabled ol">Community</a></h4>
+            <h5><a id="link5" href="#popup5" class="highlight disabled ol">Community</a></h5>
             <a href="#popup5" class="invisiblebox" tabindex="-1"><button class="invisiblebox" tabindex="-1">Community</button></a>
             <div id="popup5" class="overlay">
                 <div class="popup">
@@ -142,8 +142,9 @@
         </div>
 
         <div class="box6">
-            <h4><a id="link6" href="#popup6" class="highlight disabled ol">Entertainment</a></h4>
+            
             <a href="#popup6" class="invisiblebox" tabindex="-1"><button class="invisiblebox" tabindex="-1">Entertainment</button></a>
+            <h5><a id="link6" href="#popup6" class="highlight disabled ol">Entertainment</a></h5>
             <div id="popup6" class="overlay">
                 <div class="popup">
                     <div class="popup-header">
@@ -165,7 +166,7 @@
         </div>
 
         <div class="box7">
-            <h4><a id="link7" href="#popup7" class="highlight disabled ol">Government</a></h4>
+            <h5><a id="link7" href="#popup7" class="highlight disabled ol">Government</a></h5>
             <a href="#popup7" class="invisiblebox" tabindex="-1"><button class="invisiblebox" tabindex="-1">Government</button></a>
             <div id="popup7" class="overlay">
                 <div class="popup">
@@ -188,7 +189,7 @@
         </div>
 
         <div class="box8">
-            <h4><a id="link8" href="#popup8" class="highlight disabled ol">Travel</a></h4>
+            <h5><a id="link8" href="#popup8" class="highlight disabled ol">Travel</a></h5>
             <a href="#popup8" class="invisiblebox" tabindex="-1"><button class="invisiblebox" tabindex="-1">Travel</button></a>
             <div id="popup8" class="overlay">
                 <div class="popup">
