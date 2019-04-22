@@ -13,9 +13,9 @@
             <div class="row justify-content-center">
                 <div class="col-md-16">
                     <div class="col-md-16 col-md-offset-4">
-                        <a class="btn btn-primary" href="">Login</a>
+                        <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
                         &nbsp;&nbsp;
-                        <a class="btn btn-primary" href="">Register</a>
+                        <a class="btn btn-primary" href="{{ route('register') }}">Register</a>
                     </div>
                 </div>
             </div>
