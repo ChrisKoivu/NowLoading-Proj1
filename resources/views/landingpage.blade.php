@@ -21,7 +21,6 @@
             </div>
         </div>
         <br><br><br>
-        <hr class="custom-line">
     </body>
 </html>
 @endsection
